@@ -26,18 +26,22 @@ module alu_design#(parameter N = 8)(input clk,rst,c_in,ce,mode, input[1:0]in_val
             reg [(2*N):0]ans,ans1,ans2;
             reg err1,oflow1,c_out1,G1,L1,E1;
             wire[2*N:0] add,sub;
+            
+            reg flag,flag1;
             assign add = $signed(opa) + $signed(opb); 
             assign sub = $signed(opa) - $signed(opb);            
             always @(posedge clk or posedge rst) begin
                 if(rst) begin
-                    //res <= 0;
+                    
                     ans <= 0;
                     G1 <= 0;
                     L1 <= 0;
                     E1 <= 0;
                     err1 <= 0;
                     oflow1 <= 0;
-                    c_out1 <= 0;  
+                    c_out1 <= 0; 
+                    flag<=1'b0; 
+                    flag1<=1'b0; 
                 end
                 
                 else if(ce == 1)begin
@@ -48,6 +52,7 @@ module alu_design#(parameter N = 8)(input clk,rst,c_in,ce,mode, input[1:0]in_val
                     err1 <= 0;
                     oflow1 <= 0;
                     c_out1 <= 0;
+                    flag<=0;
                     case({mode,cmd})
                         5'd16 : begin 
                                  if(in_val == 2'b11) 
@@ -97,7 +102,7 @@ module alu_design#(parameter N = 8)(input clk,rst,c_in,ce,mode, input[1:0]in_val
                                  if(in_val == 2'b11) 
                                  begin 
                                     ans <= (opa - opb) - c_in;
-                                    if(opa < opb) oflow1 <= 1;
+                                    if(opa < (opb+c_in)) oflow1 <= 1;
                                     else oflow1 <= 0;  
                                  end 
                                  else if (in_val != 2'b11) 
@@ -148,7 +153,6 @@ module alu_design#(parameter N = 8)(input clk,rst,c_in,ce,mode, input[1:0]in_val
                             end
                          else if(in_val == 2'b00 || in_val == 2'b01)
                             begin
-
                                 err1 <= 1'b1; ans <= 0;
                             end       
 //                         else  begin
@@ -201,7 +205,7 @@ module alu_design#(parameter N = 8)(input clk,rst,c_in,ce,mode, input[1:0]in_val
                             err1 <= 1'b1; ans <= 0;
                         end
                        end
-                       
+//                       
                        5'd26: begin
                        
                        if(in_val == 2'b11)begin
@@ -414,9 +418,11 @@ module alu_design#(parameter N = 8)(input clk,rst,c_in,ce,mode, input[1:0]in_val
                5'd12: begin  
                       if(in_val == 2'b11) begin
     
-                         err1 <= (opb[N-1 : $clog2(N)] != 0) ? 1 : 0;
-        
+                         err1 <= (opb[N-1 : $clog2(N)-1] != 0) ? 1 : 0;
+                         if(opb > 0 && opb < N-1) 
                          ans  <= (opa << opb[$clog2(N)-1 : 0]) | (opa >> (N - opb[$clog2(N)-1 : 0]));
+                         else if(opb == 0) ans <= opa;
+                         else ans <= 0;
                        end
                        else begin
                          err1 <= 1;
@@ -427,8 +433,11 @@ module alu_design#(parameter N = 8)(input clk,rst,c_in,ce,mode, input[1:0]in_val
                
                5'd13: begin  
                       if(in_val == 2'b11) begin
-                         err1 <= (opb[N-1 : $clog2(N)] != 0) ? 1 : 0;
+                         err1 <= (opb[N-1 : $clog2(N)-1] != 0) ? 1 : 0;
+                         if(opb > 0 && opb < N-1)
                          ans  <= (opa >> opb[$clog2(N)-1 : 0]) | (opa << (N - opb[$clog2(N)-1 : 0]));
+                         else if(opb == 0) ans <= opa;
+                         else ans <= 0;
                       end
                       else begin
                          err1 <= 1;
@@ -443,29 +452,26 @@ module alu_design#(parameter N = 8)(input clk,rst,c_in,ce,mode, input[1:0]in_val
                 
                 else ans <= ans;
             end
-            
+         
+
          
          
         always @(posedge clk or posedge rst)begin
         if(rst) begin ans1 <= 'b0; ans2 <= 'b0; end
-        else begin
-            if({mode,cmd} == 5'd25)
+        else begin                
                 ans1 <= ans;
-            else
-                ans1 <= 'bx;   
-
-            if({mode,cmd} == 5'd26)
-                ans2 <= ans;
-            else
-                ans2 <= 'bx;
-             end
+//                
+                ans2 <= ans; end
+//            else
+//                ans2 <= 'bx;
+//             end
         end    
             
             
         always @(posedge clk or posedge rst)begin
             if(rst) begin
                     res <= 'b0;
-                    //ans <= 0;
+                    
                     G <= 0;
                     L <= 0;
                     E <= 0;
@@ -476,21 +482,45 @@ module alu_design#(parameter N = 8)(input clk,rst,c_in,ce,mode, input[1:0]in_val
                 
                 
             else if(ce == 1)begin
-                    if({mode,cmd} == 5'd25)res <= ans1;
-                    else if ({mode,cmd} == 5'd26) res <= ans2;
-                    else res <= ans;
-                  
-                    G <= G1;
-                    L <= L1;
-                    E <= E1;
-                    err <= err1;
-                    oflow <= oflow1;
-              
+            res <= ans;
+                    if({mode,cmd} == 5'd25)
+                    begin
+                    res <= ans1;
+                    if(flag)begin
+                        res<={2*N{1'bx}};
+                        flag<=1'b0;
                     end
-            else res <= 'bx;        
+                    else
+                    flag<=1'b1;
+                   end
+                   
+                   else if({mode,cmd} == 5'd26)
+                   begin
+                   res <= ans2;
+                   if(flag1)begin
+                    res <= 'bx;
+                    flag1 <= 1'b0;
+                    end
+                    else flag1 <= 1'b1;
+                    end
+//                    else flag<=0;
+//                    end
+//end
+//                    if ({mode,cmd} == 5'd26) res <= ans1;
+//                    else res <= ans;
+                  
+//                    G <= G1;
+//                    L <= L1;
+//                    E <= E1;
+//                    err <= err1;
+//                    oflow <= oflow1;
+              
+//                    end
+//            else res <= 'bx;        
                     
-//                    
+                    
         end
-            
+    end        
 endmodule
+
 
