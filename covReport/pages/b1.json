@@ -1,0 +1,736 @@
+var g_data = {
+b183:[{dummy:0},
+{anchor:'cvg184',items:[{z:'            if (RES_dut === 0 && ERR_dut === 0 && OFLOW_dut === 0 &&',f:'alu_2_design.v',l:'140',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'            if (RES_dut === 0 && ERR_dut === 0 && OFLOW_dut === 0 &&',f:'alu_2_design.v',l:'140',h:'1',c:'g'}
+,{cr:'m',t:'E',z:'            end else begin',f:'alu_2_design.v',l:'144',h:'0',c:'r'}
+]}],
+b187:[{dummy:0},
+{anchor:'cvg188',items:[{z:'            if (RES_dut === 0 && ERR_dut === 0) begin',f:'alu_2_design.v',l:'170',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'            if (RES_dut === 0 && ERR_dut === 0) begin',f:'alu_2_design.v',l:'170',h:'1',c:'g'}
+,{cr:'m',t:'E',z:'            end else begin',f:'alu_2_design.v',l:'173',h:'0',c:'r'}
+]}],
+b191:[{dummy:0},
+{anchor:'cvg192',items:[{z:'            if (RES_dut === held_res && ERR_dut === held_err &&',f:'alu_2_design.v',l:'211',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'            if (RES_dut === held_res && ERR_dut === held_err &&',f:'alu_2_design.v',l:'211',h:'1',c:'g'}
+,{cr:'m',t:'E',z:'            end else begin',f:'alu_2_design.v',l:'217',h:'0',c:'r'}
+]}],
+b199:[{dummy:0},
+{anchor:'cvg200',items:[{z:'            if (ERR_dut === ERR_ref) begin',f:'alu_2_design.v',l:'551',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'            if (ERR_dut === ERR_ref) begin',f:'alu_2_design.v',l:'551',h:'0',c:'r'}
+,{cr:'c',t:'E',z:'            end else begin',f:'alu_2_design.v',l:'555',h:'1',c:'g'}
+]}],
+b201:[{dummy:0},
+{anchor:'cvg202',items:[{z:'            if (compare_outputs(1\'b0)) begin',f:'alu_2_design.v',l:'586',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (compare_outputs(1\'b0)) begin',f:'alu_2_design.v',l:'586',h:'14',c:'g'}
+,{cr:'c',t:'E',z:'            end else begin',f:'alu_2_design.v',l:'590',h:'130',c:'g'}
+]}],
+b203:[{dummy:0},
+{anchor:'cvg204',items:[{z:'            if (compare_outputs(1\'b0)) begin',f:'alu_2_design.v',l:'622',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'            if (compare_outputs(1\'b0)) begin',f:'alu_2_design.v',l:'622',h:'0',c:'r'}
+,{cr:'c',t:'E',z:'            end else begin',f:'alu_2_design.v',l:'626',h:'11',c:'g'}
+]}],
+b205:[{dummy:0},
+{anchor:'cvg206',items:[{z:'            if (RES_dut[2*N-1:0] !== RES_ref)  compare_outputs = 0;',f:'alu_2_design.v',l:'640',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (RES_dut[2*N-1:0] !== RES_ref)  compare_outputs = 0;',f:'alu_2_design.v',l:'640',h:'45',c:'g'}
+,{cr:'c',t:'A',z:'            if (RES_dut[2*N-1:0] !== RES_ref)  compare_outputs = 0;',f:'alu_2_design.v',l:'640',h:'110',c:'g'}
+]},
+{anchor:'cvg207',items:[{z:'            if (ERR_dut   !== ERR_ref)           compare_outputs = 0;',f:'alu_2_design.v',l:'641',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (ERR_dut   !== ERR_ref)           compare_outputs = 0;',f:'alu_2_design.v',l:'641',h:'9',c:'g'}
+,{cr:'c',t:'A',z:'            if (ERR_dut   !== ERR_ref)           compare_outputs = 0;',f:'alu_2_design.v',l:'641',h:'146',c:'g'}
+]},
+{anchor:'cvg208',items:[{z:'            if (OFLOW_dut !== OFLOW_ref)         compare_outputs = 0;',f:'alu_2_design.v',l:'642',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (OFLOW_dut !== OFLOW_ref)         compare_outputs = 0;',f:'alu_2_design.v',l:'642',h:'70',c:'g'}
+,{cr:'c',t:'A',z:'            if (OFLOW_dut !== OFLOW_ref)         compare_outputs = 0;',f:'alu_2_design.v',l:'642',h:'85',c:'g'}
+]},
+{anchor:'cvg209',items:[{z:'            if(COUT_dut !== COUT_ref)            compare_outputs = 0;',f:'alu_2_design.v',l:'643',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if(COUT_dut !== COUT_ref)            compare_outputs = 0;',f:'alu_2_design.v',l:'643',h:'67',c:'g'}
+,{cr:'c',t:'A',z:'            if(COUT_dut !== COUT_ref)            compare_outputs = 0;',f:'alu_2_design.v',l:'643',h:'88',c:'g'}
+]},
+{anchor:'cvg210',items:[{z:'            if (G_dut     !== G_ref)             compare_outputs = 0;',f:'alu_2_design.v',l:'644',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (G_dut     !== G_ref)             compare_outputs = 0;',f:'alu_2_design.v',l:'644',h:'3',c:'g'}
+,{cr:'c',t:'A',z:'            if (G_dut     !== G_ref)             compare_outputs = 0;',f:'alu_2_design.v',l:'644',h:'152',c:'g'}
+]},
+{anchor:'cvg211',items:[{z:'            if (L_dut     !== L_ref)             compare_outputs = 0;',f:'alu_2_design.v',l:'645',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (L_dut     !== L_ref)             compare_outputs = 0;',f:'alu_2_design.v',l:'645',h:'114',c:'g'}
+,{cr:'c',t:'A',z:'            if (L_dut     !== L_ref)             compare_outputs = 0;',f:'alu_2_design.v',l:'645',h:'41',c:'g'}
+]},
+{anchor:'cvg212',items:[{z:'            if (E_dut     !== E_ref)             compare_outputs = 0;',f:'alu_2_design.v',l:'646',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (E_dut     !== E_ref)             compare_outputs = 0;',f:'alu_2_design.v',l:'646',h:'9',c:'g'}
+,{cr:'c',t:'A',z:'            if (E_dut     !== E_ref)             compare_outputs = 0;',f:'alu_2_design.v',l:'646',h:'146',c:'g'}
+]}],
+b3:[{dummy:0},
+{anchor:'cvg215',items:[{z:'        if(rst)',f:'alu_2_design.v',l:'682',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if(rst)',f:'alu_2_design.v',l:'682',h:'6',c:'g'}
+,{cr:'c',t:'E',z:'        else',f:'alu_2_design.v',l:'694',h:'322',c:'g'}
+]},
+{anchor:'cvg216',items:[{z:'            if(CE)',f:'alu_2_design.v',l:'697',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if(CE)',f:'alu_2_design.v',l:'697',h:'321',c:'g'}
+,{cr:'c',t:'A',z:'            if(CE)',f:'alu_2_design.v',l:'697',h:'1',c:'g'}
+]},
+{anchor:'cvg217',items:[{z:'                if(MODE)',f:'alu_2_design.v',l:'702',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(MODE)',f:'alu_2_design.v',l:'702',h:'199',c:'g'}
+,{cr:'c',t:'E',z:'                else',f:'alu_2_design.v',l:'905',h:'122',c:'g'}
+]},
+{anchor:'cvg218',items:[{z:'                    case(INP_VALID)',f:'alu_2_design.v',l:'705',c:'Y',p:'80.00'}
+,{cr:'c',t:'T',z:'                        2\'b00:',f:'alu_2_design.v',l:'707',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                        2\'b01:',f:'alu_2_design.v',l:'712',h:'22',c:'g'}
+,{cr:'c',t:'T',z:'                        2\'b10:',f:'alu_2_design.v',l:'736',h:'18',c:'g'}
+,{cr:'c',t:'T',z:'                        2\'b11:',f:'alu_2_design.v',l:'760',h:'157',c:'g'}
+,{cr:'m',t:'A',z:'                    case(INP_VALID)',f:'alu_2_design.v',l:'705',h:'0',c:'r'}
+]},
+{anchor:'cvg219',items:[{z:'                            case(CMD)',f:'alu_2_design.v',l:'715',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'                                4\'b0100:',f:'alu_2_design.v',l:'717',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0101:',f:'alu_2_design.v',l:'722',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                default:',f:'alu_2_design.v',l:'727',h:'14',c:'g'}
+]},
+{anchor:'cvg220',items:[{z:'                            case(CMD)',f:'alu_2_design.v',l:'739',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'                                4\'b0110:',f:'alu_2_design.v',l:'741',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0111:',f:'alu_2_design.v',l:'746',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                default:',f:'alu_2_design.v',l:'751',h:'10',c:'g'}
+]},
+{anchor:'cvg221',items:[{z:'                            case(CMD)',f:'alu_2_design.v',l:'763',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'                                4\'b0000:',f:'alu_2_design.v',l:'765',h:'35',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0001:',f:'alu_2_design.v',l:'774',h:'13',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0010:',f:'alu_2_design.v',l:'780',h:'12',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0011:',f:'alu_2_design.v',l:'789',h:'10',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0100:',f:'alu_2_design.v',l:'795',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0101:',f:'alu_2_design.v',l:'800',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0110:',f:'alu_2_design.v',l:'805',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0111:',f:'alu_2_design.v',l:'810',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1000:',f:'alu_2_design.v',l:'815',h:'7',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1001:',f:'alu_2_design.v',l:'822',h:'18',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1010:',f:'alu_2_design.v',l:'838',h:'15',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1011:',f:'alu_2_design.v',l:'854',h:'10',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1100:',f:'alu_2_design.v',l:'873',h:'8',c:'g'}
+,{cr:'c',t:'T',z:'                                default:',f:'alu_2_design.v',l:'892',h:'13',c:'g'}
+]},
+{anchor:'cvg222',items:[{z:'                                    OFLOW <= (OPA < OPB) ? 1 : 0;',f:'alu_2_design.v',l:'777',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                                    OFLOW <= (OPA < OPB) ? 1 : 0;',f:'alu_2_design.v',l:'777',h:'4',c:'g'}
+,{cr:'c',t:'E',z:'                                    OFLOW <= (OPA < OPB) ? 1 : 0;',f:'alu_2_design.v',l:'777',h:'9',c:'g'}
+]},
+{anchor:'cvg223',items:[{z:'                                    OFLOW <= (OPA < (OPB + CIN)) ? 1 : 0;...',f:'alu_2_design.v',l:'792',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                                    OFLOW <= (OPA < (OPB + CIN)) ? 1 : 0;...',f:'alu_2_design.v',l:'792',h:'2',c:'g'}
+,{cr:'c',t:'E',z:'                                    OFLOW <= (OPA < (OPB + CIN)) ? 1 : 0;...',f:'alu_2_design.v',l:'792',h:'8',c:'g'}
+]},
+{anchor:'cvg224',items:[{z:'                                    if(count == 2)',f:'alu_2_design.v',l:'825',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                                    if(count == 2)',f:'alu_2_design.v',l:'825',h:'6',c:'g'}
+,{cr:'c',t:'E',z:'                                    else',f:'alu_2_design.v',l:'831',h:'12',c:'g'}
+]},
+{anchor:'cvg225',items:[{z:'                                    if(count == 2)',f:'alu_2_design.v',l:'841',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                                    if(count == 2)',f:'alu_2_design.v',l:'841',h:'5',c:'g'}
+,{cr:'c',t:'E',z:'                                    else',f:'alu_2_design.v',l:'847',h:'10',c:'g'}
+]},
+{anchor:'cvg226',items:[{z:'                    case(INP_VALID)',f:'alu_2_design.v',l:'908',c:'Y',p:'80.00'}
+,{cr:'c',t:'T',z:'                        2\'b00:',f:'alu_2_design.v',l:'910',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                        2\'b01:',f:'alu_2_design.v',l:'915',h:'24',c:'g'}
+,{cr:'c',t:'T',z:'                        2\'b10:',f:'alu_2_design.v',l:'938',h:'24',c:'g'}
+,{cr:'c',t:'T',z:'                        2\'b11:',f:'alu_2_design.v',l:'961',h:'72',c:'g'}
+,{cr:'m',t:'A',z:'                    case(INP_VALID)',f:'alu_2_design.v',l:'908',h:'0',c:'r'}
+]},
+{anchor:'cvg227',items:[{z:'                            case(CMD)',f:'alu_2_design.v',l:'918',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'                                4\'b0110:',f:'alu_2_design.v',l:'920',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1000:',f:'alu_2_design.v',l:'923',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1001:',f:'alu_2_design.v',l:'926',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                default:',f:'alu_2_design.v',l:'929',h:'12',c:'g'}
+]},
+{anchor:'cvg228',items:[{z:'                            case(CMD)',f:'alu_2_design.v',l:'941',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'                                4\'b0111:',f:'alu_2_design.v',l:'943',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1010:',f:'alu_2_design.v',l:'946',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1011:',f:'alu_2_design.v',l:'949',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                default:',f:'alu_2_design.v',l:'952',h:'12',c:'g'}
+]},
+{anchor:'cvg229',items:[{z:'                            case(CMD)',f:'alu_2_design.v',l:'964',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'                                4\'b0000: RES <= OPA & OPB;',f:'alu_2_design.v',l:'966',h:'9',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0001: RES <= ~(OPA & OPB);',f:'alu_2_design.v',l:'967',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0010: RES <= OPA | OPB;',f:'alu_2_design.v',l:'968',h:'6',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0011: RES <= ~(OPA | OPB);',f:'alu_2_design.v',l:'969',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0100: RES <= OPA ^ OPB;',f:'alu_2_design.v',l:'970',h:'5',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0101: RES <= ~(OPA ^ OPB);',f:'alu_2_design.v',l:'971',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0110: RES <= ~OPA;',f:'alu_2_design.v',l:'973',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0111: RES <= ~OPB;',f:'alu_2_design.v',l:'974',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1000: RES <= (OPA >> 1);',f:'alu_2_design.v',l:'976',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1001: RES <= (OPA << 1);',f:'alu_2_design.v',l:'977',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1010: RES <= (OPB >> 1);',f:'alu_2_design.v',l:'979',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1011: RES <= (OPB << 1);',f:'alu_2_design.v',l:'980',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1100:',f:'alu_2_design.v',l:'982',h:'11',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1101:',f:'alu_2_design.v',l:'1020',h:'13',c:'g'}
+,{cr:'c',t:'T',z:'                                default:',f:'alu_2_design.v',l:'1058',h:'4',c:'g'}
+]},
+{anchor:'cvg230',items:[{z:'                                    casex(OPB)',f:'alu_2_design.v',l:'985',c:'R',p:'44.44'}
+,{cr:'c',t:'T',z:'                                        8\'b0000_X000:',f:'alu_2_design.v',l:'987',h:'3',c:'g'}
+,{cr:'c',t:'T',z:'                                        8\'b0000_X001:',f:'alu_2_design.v',l:'990',h:'4',c:'g'}
+,{cr:'m',t:'T',z:'                                        8\'b0000_X010:',f:'alu_2_design.v',l:'993',h:'0',c:'r'}
+,{cr:'m',t:'T',z:'                                        8\'b0000_X011:',f:'alu_2_design.v',l:'996',h:'0',c:'r'}
+,{cr:'c',t:'T',z:'                                        8\'b0000_X100:',f:'alu_2_design.v',l:'999',h:'2',c:'g'}
+,{cr:'m',t:'T',z:'                                        8\'b0000_X101:',f:'alu_2_design.v',l:'1002',h:'0',c:'r'}
+,{cr:'m',t:'T',z:'                                        8\'b0000_X110:',f:'alu_2_design.v',l:'1005',h:'0',c:'r'}
+,{cr:'m',t:'T',z:'                                        8\'b0000_X111:',f:'alu_2_design.v',l:'1008',h:'0',c:'r'}
+,{cr:'c',t:'T',z:'                                        default:',f:'alu_2_design.v',l:'1011',h:'2',c:'g'}
+]},
+{anchor:'cvg231',items:[{z:'                                    casex(OPB)',f:'alu_2_design.v',l:'1023',c:'R',p:'44.44'}
+,{cr:'c',t:'T',z:'                                        8\'b0000_X000:',f:'alu_2_design.v',l:'1025',h:'3',c:'g'}
+,{cr:'c',t:'T',z:'                                        8\'b0000_X001:',f:'alu_2_design.v',l:'1028',h:'6',c:'g'}
+,{cr:'m',t:'T',z:'                                        8\'b0000_X010:',f:'alu_2_design.v',l:'1031',h:'0',c:'r'}
+,{cr:'m',t:'T',z:'                                        8\'b0000_X011:',f:'alu_2_design.v',l:'1034',h:'0',c:'r'}
+,{cr:'c',t:'T',z:'                                        8\'b0000_X100:',f:'alu_2_design.v',l:'1037',h:'2',c:'g'}
+,{cr:'m',t:'T',z:'                                        8\'b0000_X101:',f:'alu_2_design.v',l:'1040',h:'0',c:'r'}
+,{cr:'m',t:'T',z:'                                        8\'b0000_X110:',f:'alu_2_design.v',l:'1043',h:'0',c:'r'}
+,{cr:'m',t:'T',z:'                                        8\'b0000_X111:',f:'alu_2_design.v',l:'1046',h:'0',c:'r'}
+,{cr:'c',t:'T',z:'                                        default:',f:'alu_2_design.v',l:'1049',h:'2',c:'g'}
+]}],
+b214:[{dummy:0},
+{anchor:'cvg215',items:[{z:'        if(rst)',f:'alu_2_design.v',l:'682',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        if(rst)',f:'alu_2_design.v',l:'682',h:'6',c:'g'}
+,{cr:'c',t:'E',z:'        else',f:'alu_2_design.v',l:'694',h:'322',c:'g'}
+]},
+{anchor:'cvg216',items:[{z:'            if(CE)',f:'alu_2_design.v',l:'697',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if(CE)',f:'alu_2_design.v',l:'697',h:'321',c:'g'}
+,{cr:'c',t:'A',z:'            if(CE)',f:'alu_2_design.v',l:'697',h:'1',c:'g'}
+]},
+{anchor:'cvg217',items:[{z:'                if(MODE)',f:'alu_2_design.v',l:'702',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(MODE)',f:'alu_2_design.v',l:'702',h:'199',c:'g'}
+,{cr:'c',t:'E',z:'                else',f:'alu_2_design.v',l:'905',h:'122',c:'g'}
+]},
+{anchor:'cvg218',items:[{z:'                    case(INP_VALID)',f:'alu_2_design.v',l:'705',c:'Y',p:'80.00'}
+,{cr:'c',t:'T',z:'                        2\'b00:',f:'alu_2_design.v',l:'707',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                        2\'b01:',f:'alu_2_design.v',l:'712',h:'22',c:'g'}
+,{cr:'c',t:'T',z:'                        2\'b10:',f:'alu_2_design.v',l:'736',h:'18',c:'g'}
+,{cr:'c',t:'T',z:'                        2\'b11:',f:'alu_2_design.v',l:'760',h:'157',c:'g'}
+,{cr:'m',t:'A',z:'                    case(INP_VALID)',f:'alu_2_design.v',l:'705',h:'0',c:'r'}
+]},
+{anchor:'cvg219',items:[{z:'                            case(CMD)',f:'alu_2_design.v',l:'715',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'                                4\'b0100:',f:'alu_2_design.v',l:'717',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0101:',f:'alu_2_design.v',l:'722',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                default:',f:'alu_2_design.v',l:'727',h:'14',c:'g'}
+]},
+{anchor:'cvg220',items:[{z:'                            case(CMD)',f:'alu_2_design.v',l:'739',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'                                4\'b0110:',f:'alu_2_design.v',l:'741',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0111:',f:'alu_2_design.v',l:'746',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                default:',f:'alu_2_design.v',l:'751',h:'10',c:'g'}
+]},
+{anchor:'cvg221',items:[{z:'                            case(CMD)',f:'alu_2_design.v',l:'763',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'                                4\'b0000:',f:'alu_2_design.v',l:'765',h:'35',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0001:',f:'alu_2_design.v',l:'774',h:'13',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0010:',f:'alu_2_design.v',l:'780',h:'12',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0011:',f:'alu_2_design.v',l:'789',h:'10',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0100:',f:'alu_2_design.v',l:'795',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0101:',f:'alu_2_design.v',l:'800',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0110:',f:'alu_2_design.v',l:'805',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0111:',f:'alu_2_design.v',l:'810',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1000:',f:'alu_2_design.v',l:'815',h:'7',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1001:',f:'alu_2_design.v',l:'822',h:'18',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1010:',f:'alu_2_design.v',l:'838',h:'15',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1011:',f:'alu_2_design.v',l:'854',h:'10',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1100:',f:'alu_2_design.v',l:'873',h:'8',c:'g'}
+,{cr:'c',t:'T',z:'                                default:',f:'alu_2_design.v',l:'892',h:'13',c:'g'}
+]},
+{anchor:'cvg222',items:[{z:'                                    OFLOW <= (OPA < OPB) ? 1 : 0;',f:'alu_2_design.v',l:'777',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                                    OFLOW <= (OPA < OPB) ? 1 : 0;',f:'alu_2_design.v',l:'777',h:'4',c:'g'}
+,{cr:'c',t:'E',z:'                                    OFLOW <= (OPA < OPB) ? 1 : 0;',f:'alu_2_design.v',l:'777',h:'9',c:'g'}
+]},
+{anchor:'cvg223',items:[{z:'                                    OFLOW <= (OPA < (OPB + CIN)) ? 1 : 0;...',f:'alu_2_design.v',l:'792',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                                    OFLOW <= (OPA < (OPB + CIN)) ? 1 : 0;...',f:'alu_2_design.v',l:'792',h:'2',c:'g'}
+,{cr:'c',t:'E',z:'                                    OFLOW <= (OPA < (OPB + CIN)) ? 1 : 0;...',f:'alu_2_design.v',l:'792',h:'8',c:'g'}
+]},
+{anchor:'cvg224',items:[{z:'                                    if(count == 2)',f:'alu_2_design.v',l:'825',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                                    if(count == 2)',f:'alu_2_design.v',l:'825',h:'6',c:'g'}
+,{cr:'c',t:'E',z:'                                    else',f:'alu_2_design.v',l:'831',h:'12',c:'g'}
+]},
+{anchor:'cvg225',items:[{z:'                                    if(count == 2)',f:'alu_2_design.v',l:'841',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                                    if(count == 2)',f:'alu_2_design.v',l:'841',h:'5',c:'g'}
+,{cr:'c',t:'E',z:'                                    else',f:'alu_2_design.v',l:'847',h:'10',c:'g'}
+]},
+{anchor:'cvg226',items:[{z:'                    case(INP_VALID)',f:'alu_2_design.v',l:'908',c:'Y',p:'80.00'}
+,{cr:'c',t:'T',z:'                        2\'b00:',f:'alu_2_design.v',l:'910',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                        2\'b01:',f:'alu_2_design.v',l:'915',h:'24',c:'g'}
+,{cr:'c',t:'T',z:'                        2\'b10:',f:'alu_2_design.v',l:'938',h:'24',c:'g'}
+,{cr:'c',t:'T',z:'                        2\'b11:',f:'alu_2_design.v',l:'961',h:'72',c:'g'}
+,{cr:'m',t:'A',z:'                    case(INP_VALID)',f:'alu_2_design.v',l:'908',h:'0',c:'r'}
+]},
+{anchor:'cvg227',items:[{z:'                            case(CMD)',f:'alu_2_design.v',l:'918',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'                                4\'b0110:',f:'alu_2_design.v',l:'920',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1000:',f:'alu_2_design.v',l:'923',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1001:',f:'alu_2_design.v',l:'926',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                default:',f:'alu_2_design.v',l:'929',h:'12',c:'g'}
+]},
+{anchor:'cvg228',items:[{z:'                            case(CMD)',f:'alu_2_design.v',l:'941',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'                                4\'b0111:',f:'alu_2_design.v',l:'943',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1010:',f:'alu_2_design.v',l:'946',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1011:',f:'alu_2_design.v',l:'949',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                default:',f:'alu_2_design.v',l:'952',h:'12',c:'g'}
+]},
+{anchor:'cvg229',items:[{z:'                            case(CMD)',f:'alu_2_design.v',l:'964',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'                                4\'b0000: RES <= OPA & OPB;',f:'alu_2_design.v',l:'966',h:'9',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0001: RES <= ~(OPA & OPB);',f:'alu_2_design.v',l:'967',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0010: RES <= OPA | OPB;',f:'alu_2_design.v',l:'968',h:'6',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0011: RES <= ~(OPA | OPB);',f:'alu_2_design.v',l:'969',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0100: RES <= OPA ^ OPB;',f:'alu_2_design.v',l:'970',h:'5',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0101: RES <= ~(OPA ^ OPB);',f:'alu_2_design.v',l:'971',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0110: RES <= ~OPA;',f:'alu_2_design.v',l:'973',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b0111: RES <= ~OPB;',f:'alu_2_design.v',l:'974',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1000: RES <= (OPA >> 1);',f:'alu_2_design.v',l:'976',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1001: RES <= (OPA << 1);',f:'alu_2_design.v',l:'977',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1010: RES <= (OPB >> 1);',f:'alu_2_design.v',l:'979',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1011: RES <= (OPB << 1);',f:'alu_2_design.v',l:'980',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1100:',f:'alu_2_design.v',l:'982',h:'11',c:'g'}
+,{cr:'c',t:'T',z:'                                4\'b1101:',f:'alu_2_design.v',l:'1020',h:'13',c:'g'}
+,{cr:'c',t:'T',z:'                                default:',f:'alu_2_design.v',l:'1058',h:'4',c:'g'}
+]},
+{anchor:'cvg230',items:[{z:'                                    casex(OPB)',f:'alu_2_design.v',l:'985',c:'R',p:'44.44'}
+,{cr:'c',t:'T',z:'                                        8\'b0000_X000:',f:'alu_2_design.v',l:'987',h:'3',c:'g'}
+,{cr:'c',t:'T',z:'                                        8\'b0000_X001:',f:'alu_2_design.v',l:'990',h:'4',c:'g'}
+,{cr:'m',t:'T',z:'                                        8\'b0000_X010:',f:'alu_2_design.v',l:'993',h:'0',c:'r'}
+,{cr:'m',t:'T',z:'                                        8\'b0000_X011:',f:'alu_2_design.v',l:'996',h:'0',c:'r'}
+,{cr:'c',t:'T',z:'                                        8\'b0000_X100:',f:'alu_2_design.v',l:'999',h:'2',c:'g'}
+,{cr:'m',t:'T',z:'                                        8\'b0000_X101:',f:'alu_2_design.v',l:'1002',h:'0',c:'r'}
+,{cr:'m',t:'T',z:'                                        8\'b0000_X110:',f:'alu_2_design.v',l:'1005',h:'0',c:'r'}
+,{cr:'m',t:'T',z:'                                        8\'b0000_X111:',f:'alu_2_design.v',l:'1008',h:'0',c:'r'}
+,{cr:'c',t:'T',z:'                                        default:',f:'alu_2_design.v',l:'1011',h:'2',c:'g'}
+]},
+{anchor:'cvg231',items:[{z:'                                    casex(OPB)',f:'alu_2_design.v',l:'1023',c:'R',p:'44.44'}
+,{cr:'c',t:'T',z:'                                        8\'b0000_X000:',f:'alu_2_design.v',l:'1025',h:'3',c:'g'}
+,{cr:'c',t:'T',z:'                                        8\'b0000_X001:',f:'alu_2_design.v',l:'1028',h:'6',c:'g'}
+,{cr:'m',t:'T',z:'                                        8\'b0000_X010:',f:'alu_2_design.v',l:'1031',h:'0',c:'r'}
+,{cr:'m',t:'T',z:'                                        8\'b0000_X011:',f:'alu_2_design.v',l:'1034',h:'0',c:'r'}
+,{cr:'c',t:'T',z:'                                        8\'b0000_X100:',f:'alu_2_design.v',l:'1037',h:'2',c:'g'}
+,{cr:'m',t:'T',z:'                                        8\'b0000_X101:',f:'alu_2_design.v',l:'1040',h:'0',c:'r'}
+,{cr:'m',t:'T',z:'                                        8\'b0000_X110:',f:'alu_2_design.v',l:'1043',h:'0',c:'r'}
+,{cr:'m',t:'T',z:'                                        8\'b0000_X111:',f:'alu_2_design.v',l:'1046',h:'0',c:'r'}
+,{cr:'c',t:'T',z:'                                        default:',f:'alu_2_design.v',l:'1049',h:'2',c:'g'}
+]}],
+b4:[{dummy:0},
+{anchor:'cvg304',items:[{z:'if(!rst) begin',f:'alu_2_design.v',l:'1086',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'if(!rst) begin',f:'alu_2_design.v',l:'1086',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'else if(ce == 1) begin ',f:'alu_2_design.v',l:'1097',h:'175',c:'g'}
+,{cr:'c',t:'E',z:'else res = res;',f:'alu_2_design.v',l:'1398',h:'1',c:'g'}
+]},
+{anchor:'cvg305',items:[{z:'    if(mode == 1)begin',f:'alu_2_design.v',l:'1105',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'    if(mode == 1)begin',f:'alu_2_design.v',l:'1105',h:'109',c:'g'}
+,{cr:'c',t:'E',z:'        else begin ',f:'alu_2_design.v',l:'1234',h:'66',c:'g'}
+]},
+{anchor:'cvg306',items:[{z:'        case(cmd)',f:'alu_2_design.v',l:'1106',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'        4\'b0000: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1107',h:'24',c:'g'}
+,{cr:'c',t:'T',z:'        4\'b0001: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1116',h:'9',c:'g'}
+,{cr:'c',t:'T',z:'        4\'b0010: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1125',h:'7',c:'g'}
+,{cr:'c',t:'T',z:'        4\'b0011: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1134',h:'6',c:'g'}
+,{cr:'c',t:'T',z:'        4\'b0100: begin if(in_val == 2\'b11 || in_val == 2\'b01) begin',f:'alu_2_design.v',l:'1143',h:'6',c:'g'}
+,{cr:'c',t:'T',z:'        4\'b0101: begin if(in_val == 2\'b11 || in_val == 2\'b01) begin',f:'alu_2_design.v',l:'1152',h:'6',c:'g'}
+,{cr:'c',t:'T',z:'        4\'b0110: begin if(in_val == 2\'b11 || in_val == 2\'b10) begin',f:'alu_2_design.v',l:'1161',h:'6',c:'g'}
+,{cr:'c',t:'T',z:'        4\'b0111: begin if(in_val == 2\'b11 || in_val == 2\'b10) begin',f:'alu_2_design.v',l:'1170',h:'5',c:'g'}
+,{cr:'c',t:'T',z:'        4\'b1000: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1179',h:'6',c:'g'}
+,{cr:'c',t:'T',z:'        4\'b1001: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1191',h:'7',c:'g'}
+,{cr:'c',t:'T',z:'        4\'b1010: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1202',h:'5',c:'g'}
+,{cr:'c',t:'T',z:'        4\'b1011: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1213',h:'5',c:'g'}
+,{cr:'c',t:'T',z:'         4\'b1100: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1222',h:'4',c:'g'}
+,{cr:'c',t:'A',z:'        case(cmd)',f:'alu_2_design.v',l:'1106',h:'13',c:'g'}
+]},
+{anchor:'cvg307',items:[{z:'        4\'b0000: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1107',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        4\'b0000: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1107',h:'21',c:'g'}
+,{cr:'c',t:'E',z:'            else begin @(posedge clk); ',f:'alu_2_design.v',l:'1111',h:'3',c:'g'}
+]},
+{anchor:'cvg308',items:[{z:'        4\'b0001: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1116',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        4\'b0001: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1116',h:'7',c:'g'}
+,{cr:'c',t:'E',z:'            else begin @(posedge clk); ',f:'alu_2_design.v',l:'1120',h:'2',c:'g'}
+]},
+{anchor:'cvg309',items:[{z:'        4\'b0010: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1125',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        4\'b0010: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1125',h:'6',c:'g'}
+,{cr:'c',t:'E',z:'            else begin  @(posedge clk); ',f:'alu_2_design.v',l:'1129',h:'1',c:'g'}
+]},
+{anchor:'cvg310',items:[{z:'        4\'b0011: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1134',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        4\'b0011: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1134',h:'5',c:'g'}
+,{cr:'c',t:'E',z:'            else begin @(posedge clk); ',f:'alu_2_design.v',l:'1138',h:'1',c:'g'}
+]},
+{anchor:'cvg311',items:[{z:'        4\'b0100: begin if(in_val == 2\'b11 || in_val == 2\'b01) begin',f:'alu_2_design.v',l:'1143',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        4\'b0100: begin if(in_val == 2\'b11 || in_val == 2\'b01) begin',f:'alu_2_design.v',l:'1143',h:'5',c:'g'}
+,{cr:'c',t:'E',z:'            else begin @(posedge clk); ',f:'alu_2_design.v',l:'1147',h:'1',c:'g'}
+]},
+{anchor:'cvg312',items:[{z:'        4\'b0101: begin if(in_val == 2\'b11 || in_val == 2\'b01) begin',f:'alu_2_design.v',l:'1152',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        4\'b0101: begin if(in_val == 2\'b11 || in_val == 2\'b01) begin',f:'alu_2_design.v',l:'1152',h:'5',c:'g'}
+,{cr:'c',t:'E',z:'            else begin @(posedge clk); ',f:'alu_2_design.v',l:'1156',h:'1',c:'g'}
+]},
+{anchor:'cvg313',items:[{z:'        4\'b0110: begin if(in_val == 2\'b11 || in_val == 2\'b10) begin',f:'alu_2_design.v',l:'1161',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        4\'b0110: begin if(in_val == 2\'b11 || in_val == 2\'b10) begin',f:'alu_2_design.v',l:'1161',h:'5',c:'g'}
+,{cr:'c',t:'E',z:'            else begin @(posedge clk); ',f:'alu_2_design.v',l:'1165',h:'1',c:'g'}
+]},
+{anchor:'cvg314',items:[{z:'        4\'b0111: begin if(in_val == 2\'b11 || in_val == 2\'b10) begin',f:'alu_2_design.v',l:'1170',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        4\'b0111: begin if(in_val == 2\'b11 || in_val == 2\'b10) begin',f:'alu_2_design.v',l:'1170',h:'5',c:'g'}
+,{cr:'m',t:'E',z:'            else begin @(posedge clk); ',f:'alu_2_design.v',l:'1174',h:'0',c:'r'}
+]},
+{anchor:'cvg315',items:[{z:'        4\'b1000: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1179',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        4\'b1000: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1179',h:'4',c:'g'}
+,{cr:'c',t:'E',z:'            else begin @(posedge clk); ',f:'alu_2_design.v',l:'1186',h:'2',c:'g'}
+]},
+{anchor:'cvg316',items:[{z:'            if(opa > opb) begin G = 1\'b1; L = 1\'b0; E = 1\'b0;end',f:'alu_2_design.v',l:'1181',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if(opa > opb) begin G = 1\'b1; L = 1\'b0; E = 1\'b0;end',f:'alu_2_design.v',l:'1181',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'            else if(opa < opb) begin G = 1\'b0; L = 1\'b1; E = 1\'b0;end',f:'alu_2_design.v',l:'1182',h:'1',c:'g'}
+,{cr:'c',t:'E',z:'            else begin G = 1\'b0; L = 1\'b0; E = 1\'b1;end',f:'alu_2_design.v',l:'1183',h:'2',c:'g'}
+]},
+{anchor:'cvg317',items:[{z:'        4\'b1001: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1191',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        4\'b1001: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1191',h:'6',c:'g'}
+,{cr:'c',t:'E',z:'            else begin @(posedge clk);',f:'alu_2_design.v',l:'1197',h:'1',c:'g'}
+]},
+{anchor:'cvg318',items:[{z:'        4\'b1010: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1202',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        4\'b1010: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1202',h:'5',c:'g'}
+,{cr:'m',t:'E',z:'            else begin @(posedge clk); ',f:'alu_2_design.v',l:'1208',h:'0',c:'r'}
+]},
+{anchor:'cvg319',items:[{z:'        4\'b1011: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1213',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        4\'b1011: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1213',h:'5',c:'g'}
+,{cr:'m',t:'E',z:'            else begin @(posedge clk); ',f:'alu_2_design.v',l:'1217',h:'0',c:'r'}
+]},
+{anchor:'cvg320',items:[{z:'            oflow = (res[N-1] != opa[N-1]  && res[N-1] != opb[N-1]) ? 1 :...',f:'alu_2_design.v',l:'1216',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            oflow = (res[N-1] != opa[N-1]  && res[N-1] != opb[N-1]) ? 1 :...',f:'alu_2_design.v',l:'1216',h:'1',c:'g'}
+,{cr:'c',t:'E',z:'            oflow = (res[N-1] != opa[N-1]  && res[N-1] != opb[N-1]) ? 1 :...',f:'alu_2_design.v',l:'1216',h:'4',c:'g'}
+]},
+{anchor:'cvg321',items:[{z:'         4\'b1100: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1222',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'         4\'b1100: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1222',h:'4',c:'g'}
+,{cr:'m',t:'E',z:'            else begin @(posedge clk); ',f:'alu_2_design.v',l:'1226',h:'0',c:'r'}
+]},
+{anchor:'cvg322',items:[{z:'            oflow = ($signed(opa)<$signed(opb)) ? 1 : 0 ;end',f:'alu_2_design.v',l:'1225',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            oflow = ($signed(opa)<$signed(opb)) ? 1 : 0 ;end',f:'alu_2_design.v',l:'1225',h:'3',c:'g'}
+,{cr:'c',t:'E',z:'            oflow = ($signed(opa)<$signed(opb)) ? 1 : 0 ;end',f:'alu_2_design.v',l:'1225',h:'1',c:'g'}
+]},
+{anchor:'cvg323',items:[{z:'            case(cmd)',f:'alu_2_design.v',l:'1235',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'            4\'b0000:begin',f:'alu_2_design.v',l:'1236',h:'9',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b0001:begin',f:'alu_2_design.v',l:'1246',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b0010:begin',f:'alu_2_design.v',l:'1258',h:'3',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b0011:begin',f:'alu_2_design.v',l:'1271',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b0100:begin',f:'alu_2_design.v',l:'1285',h:'3',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b0101:begin',f:'alu_2_design.v',l:'1297',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b0110:begin',f:'alu_2_design.v',l:'1308',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b0111:begin',f:'alu_2_design.v',l:'1319',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b1000:begin',f:'alu_2_design.v',l:'1329',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b1001:begin',f:'alu_2_design.v',l:'1339',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b1010:begin',f:'alu_2_design.v',l:'1349',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b1011:begin',f:'alu_2_design.v',l:'1359',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b1100:begin',f:'alu_2_design.v',l:'1369',h:'7',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b1101:begin',f:'alu_2_design.v',l:'1383',h:'8',c:'g'}
+,{cr:'c',t:'A',z:'            case(cmd)',f:'alu_2_design.v',l:'1235',h:'4',c:'g'}
+]},
+{anchor:'cvg324',items:[{z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1237',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1237',h:'6',c:'g'}
+,{cr:'c',t:'E',z:'                else begin @(posedge clk); ',f:'alu_2_design.v',l:'1241',h:'3',c:'g'}
+]},
+{anchor:'cvg325',items:[{z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1247',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1247',h:'2',c:'g'}
+,{cr:'c',t:'E',z:'                else begin @(posedge clk); ',f:'alu_2_design.v',l:'1251',h:'2',c:'g'}
+]},
+{anchor:'cvg326',items:[{z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1259',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1259',h:'3',c:'g'}
+,{cr:'m',t:'E',z:'                else begin @(posedge clk);',f:'alu_2_design.v',l:'1263',h:'0',c:'r'}
+]},
+{anchor:'cvg327',items:[{z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1272',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1272',h:'2',c:'g'}
+,{cr:'m',t:'E',z:'                else begin @(posedge clk); ',f:'alu_2_design.v',l:'1276',h:'0',c:'r'}
+]},
+{anchor:'cvg328',items:[{z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1286',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1286',h:'3',c:'g'}
+,{cr:'m',t:'E',z:'                else begin @(posedge clk); ',f:'alu_2_design.v',l:'1290',h:'0',c:'r'}
+]},
+{anchor:'cvg329',items:[{z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1298',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1298',h:'2',c:'g'}
+,{cr:'m',t:'E',z:'                else begin @(posedge clk); ',f:'alu_2_design.v',l:'1302',h:'0',c:'r'}
+]},
+{anchor:'cvg330',items:[{z:'                if(in_val == 2\'b11 || in_val == 2\'b01)begin ',f:'alu_2_design.v',l:'1309',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11 || in_val == 2\'b01)begin ',f:'alu_2_design.v',l:'1309',h:'3',c:'g'}
+,{cr:'c',t:'E',z:'                else begin @(posedge clk); ',f:'alu_2_design.v',l:'1313',h:'1',c:'g'}
+]},
+{anchor:'cvg331',items:[{z:'                if(in_val == 2\'b11 || in_val == 2\'b10)begin ',f:'alu_2_design.v',l:'1320',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11 || in_val == 2\'b10)begin ',f:'alu_2_design.v',l:'1320',h:'3',c:'g'}
+,{cr:'c',t:'E',z:'                else begin @(posedge clk); ',f:'alu_2_design.v',l:'1324',h:'1',c:'g'}
+]},
+{anchor:'cvg332',items:[{z:'                if(in_val == 2\'b11 || in_val == 2\'b01)begin ',f:'alu_2_design.v',l:'1330',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11 || in_val == 2\'b01)begin ',f:'alu_2_design.v',l:'1330',h:'3',c:'g'}
+,{cr:'c',t:'E',z:'                else begin @(posedge clk); ',f:'alu_2_design.v',l:'1334',h:'1',c:'g'}
+]},
+{anchor:'cvg333',items:[{z:'                if(in_val == 2\'b11 || in_val == 2\'b01)begin ',f:'alu_2_design.v',l:'1340',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11 || in_val == 2\'b01)begin ',f:'alu_2_design.v',l:'1340',h:'3',c:'g'}
+,{cr:'c',t:'E',z:'                else begin @(posedge clk); ',f:'alu_2_design.v',l:'1344',h:'1',c:'g'}
+]},
+{anchor:'cvg334',items:[{z:'                if(in_val == 2\'b11 || in_val == 2\'b10)begin ',f:'alu_2_design.v',l:'1350',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11 || in_val == 2\'b10)begin ',f:'alu_2_design.v',l:'1350',h:'3',c:'g'}
+,{cr:'c',t:'E',z:'                else begin @(posedge clk);',f:'alu_2_design.v',l:'1354',h:'1',c:'g'}
+]},
+{anchor:'cvg335',items:[{z:'                if(in_val == 2\'b11 || in_val == 2\'b10)begin ',f:'alu_2_design.v',l:'1360',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11 || in_val == 2\'b10)begin ',f:'alu_2_design.v',l:'1360',h:'3',c:'g'}
+,{cr:'c',t:'E',z:'                else begin @(posedge clk);',f:'alu_2_design.v',l:'1364',h:'1',c:'g'}
+]},
+{anchor:'cvg336',items:[{z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1370',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1370',h:'6',c:'g'}
+,{cr:'c',t:'E',z:'                else begin @(posedge clk); ',f:'alu_2_design.v',l:'1377',h:'1',c:'g'}
+]},
+{anchor:'cvg337',items:[{z:'                err = (opb[N-1 : $clog2(N)-1] != 0) ? 1 : 0;',f:'alu_2_design.v',l:'1372',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                err = (opb[N-1 : $clog2(N)-1] != 0) ? 1 : 0;',f:'alu_2_design.v',l:'1372',h:'3',c:'g'}
+,{cr:'c',t:'E',z:'                err = (opb[N-1 : $clog2(N)-1] != 0) ? 1 : 0;',f:'alu_2_design.v',l:'1372',h:'3',c:'g'}
+]},
+{anchor:'cvg338',items:[{z:'                if(opb > 0 && opb < N) res = (opa << opb) | (opa >> (N-op...',f:'alu_2_design.v',l:'1373',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(opb > 0 && opb < N) res = (opa << opb) | (opa >> (N-op...',f:'alu_2_design.v',l:'1373',h:'3',c:'g'}
+,{cr:'c',t:'T',z:'                else if (opb == 0) res = opa;',f:'alu_2_design.v',l:'1374',h:'1',c:'g'}
+,{cr:'c',t:'E',z:'                else res = 0;',f:'alu_2_design.v',l:'1375',h:'2',c:'g'}
+]},
+{anchor:'cvg339',items:[{z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1384',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1384',h:'7',c:'g'}
+,{cr:'c',t:'E',z:'                else begin @(posedge clk); ',f:'alu_2_design.v',l:'1391',h:'1',c:'g'}
+]},
+{anchor:'cvg340',items:[{z:'                err = (opb[N-1 : $clog2(N)-1] != 0) ? 1 : 0;',f:'alu_2_design.v',l:'1386',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                err = (opb[N-1 : $clog2(N)-1] != 0) ? 1 : 0;',f:'alu_2_design.v',l:'1386',h:'3',c:'g'}
+,{cr:'c',t:'E',z:'                err = (opb[N-1 : $clog2(N)-1] != 0) ? 1 : 0;',f:'alu_2_design.v',l:'1386',h:'4',c:'g'}
+]},
+{anchor:'cvg341',items:[{z:'                if(opb > 0 && opb < N) res = (opa >> opb) | (opa << (N - ...',f:'alu_2_design.v',l:'1387',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(opb > 0 && opb < N) res = (opa >> opb) | (opa << (N - ...',f:'alu_2_design.v',l:'1387',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                else if (opb == 0) res = opa;',f:'alu_2_design.v',l:'1388',h:'1',c:'g'}
+,{cr:'c',t:'E',z:'                else res = 0;',f:'alu_2_design.v',l:'1389',h:'2',c:'g'}
+]}],
+b303:[{dummy:0},
+{anchor:'cvg304',items:[{z:'if(!rst) begin',f:'alu_2_design.v',l:'1086',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'if(!rst) begin',f:'alu_2_design.v',l:'1086',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'else if(ce == 1) begin ',f:'alu_2_design.v',l:'1097',h:'175',c:'g'}
+,{cr:'c',t:'E',z:'else res = res;',f:'alu_2_design.v',l:'1398',h:'1',c:'g'}
+]},
+{anchor:'cvg305',items:[{z:'    if(mode == 1)begin',f:'alu_2_design.v',l:'1105',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'    if(mode == 1)begin',f:'alu_2_design.v',l:'1105',h:'109',c:'g'}
+,{cr:'c',t:'E',z:'        else begin ',f:'alu_2_design.v',l:'1234',h:'66',c:'g'}
+]},
+{anchor:'cvg306',items:[{z:'        case(cmd)',f:'alu_2_design.v',l:'1106',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'        4\'b0000: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1107',h:'24',c:'g'}
+,{cr:'c',t:'T',z:'        4\'b0001: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1116',h:'9',c:'g'}
+,{cr:'c',t:'T',z:'        4\'b0010: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1125',h:'7',c:'g'}
+,{cr:'c',t:'T',z:'        4\'b0011: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1134',h:'6',c:'g'}
+,{cr:'c',t:'T',z:'        4\'b0100: begin if(in_val == 2\'b11 || in_val == 2\'b01) begin',f:'alu_2_design.v',l:'1143',h:'6',c:'g'}
+,{cr:'c',t:'T',z:'        4\'b0101: begin if(in_val == 2\'b11 || in_val == 2\'b01) begin',f:'alu_2_design.v',l:'1152',h:'6',c:'g'}
+,{cr:'c',t:'T',z:'        4\'b0110: begin if(in_val == 2\'b11 || in_val == 2\'b10) begin',f:'alu_2_design.v',l:'1161',h:'6',c:'g'}
+,{cr:'c',t:'T',z:'        4\'b0111: begin if(in_val == 2\'b11 || in_val == 2\'b10) begin',f:'alu_2_design.v',l:'1170',h:'5',c:'g'}
+,{cr:'c',t:'T',z:'        4\'b1000: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1179',h:'6',c:'g'}
+,{cr:'c',t:'T',z:'        4\'b1001: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1191',h:'7',c:'g'}
+,{cr:'c',t:'T',z:'        4\'b1010: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1202',h:'5',c:'g'}
+,{cr:'c',t:'T',z:'        4\'b1011: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1213',h:'5',c:'g'}
+,{cr:'c',t:'T',z:'         4\'b1100: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1222',h:'4',c:'g'}
+,{cr:'c',t:'A',z:'        case(cmd)',f:'alu_2_design.v',l:'1106',h:'13',c:'g'}
+]},
+{anchor:'cvg307',items:[{z:'        4\'b0000: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1107',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        4\'b0000: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1107',h:'21',c:'g'}
+,{cr:'c',t:'E',z:'            else begin @(posedge clk); ',f:'alu_2_design.v',l:'1111',h:'3',c:'g'}
+]},
+{anchor:'cvg308',items:[{z:'        4\'b0001: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1116',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        4\'b0001: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1116',h:'7',c:'g'}
+,{cr:'c',t:'E',z:'            else begin @(posedge clk); ',f:'alu_2_design.v',l:'1120',h:'2',c:'g'}
+]},
+{anchor:'cvg309',items:[{z:'        4\'b0010: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1125',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        4\'b0010: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1125',h:'6',c:'g'}
+,{cr:'c',t:'E',z:'            else begin  @(posedge clk); ',f:'alu_2_design.v',l:'1129',h:'1',c:'g'}
+]},
+{anchor:'cvg310',items:[{z:'        4\'b0011: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1134',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        4\'b0011: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1134',h:'5',c:'g'}
+,{cr:'c',t:'E',z:'            else begin @(posedge clk); ',f:'alu_2_design.v',l:'1138',h:'1',c:'g'}
+]},
+{anchor:'cvg311',items:[{z:'        4\'b0100: begin if(in_val == 2\'b11 || in_val == 2\'b01) begin',f:'alu_2_design.v',l:'1143',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        4\'b0100: begin if(in_val == 2\'b11 || in_val == 2\'b01) begin',f:'alu_2_design.v',l:'1143',h:'5',c:'g'}
+,{cr:'c',t:'E',z:'            else begin @(posedge clk); ',f:'alu_2_design.v',l:'1147',h:'1',c:'g'}
+]},
+{anchor:'cvg312',items:[{z:'        4\'b0101: begin if(in_val == 2\'b11 || in_val == 2\'b01) begin',f:'alu_2_design.v',l:'1152',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        4\'b0101: begin if(in_val == 2\'b11 || in_val == 2\'b01) begin',f:'alu_2_design.v',l:'1152',h:'5',c:'g'}
+,{cr:'c',t:'E',z:'            else begin @(posedge clk); ',f:'alu_2_design.v',l:'1156',h:'1',c:'g'}
+]},
+{anchor:'cvg313',items:[{z:'        4\'b0110: begin if(in_val == 2\'b11 || in_val == 2\'b10) begin',f:'alu_2_design.v',l:'1161',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        4\'b0110: begin if(in_val == 2\'b11 || in_val == 2\'b10) begin',f:'alu_2_design.v',l:'1161',h:'5',c:'g'}
+,{cr:'c',t:'E',z:'            else begin @(posedge clk); ',f:'alu_2_design.v',l:'1165',h:'1',c:'g'}
+]},
+{anchor:'cvg314',items:[{z:'        4\'b0111: begin if(in_val == 2\'b11 || in_val == 2\'b10) begin',f:'alu_2_design.v',l:'1170',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        4\'b0111: begin if(in_val == 2\'b11 || in_val == 2\'b10) begin',f:'alu_2_design.v',l:'1170',h:'5',c:'g'}
+,{cr:'m',t:'E',z:'            else begin @(posedge clk); ',f:'alu_2_design.v',l:'1174',h:'0',c:'r'}
+]},
+{anchor:'cvg315',items:[{z:'        4\'b1000: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1179',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        4\'b1000: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1179',h:'4',c:'g'}
+,{cr:'c',t:'E',z:'            else begin @(posedge clk); ',f:'alu_2_design.v',l:'1186',h:'2',c:'g'}
+]},
+{anchor:'cvg316',items:[{z:'            if(opa > opb) begin G = 1\'b1; L = 1\'b0; E = 1\'b0;end',f:'alu_2_design.v',l:'1181',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if(opa > opb) begin G = 1\'b1; L = 1\'b0; E = 1\'b0;end',f:'alu_2_design.v',l:'1181',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'            else if(opa < opb) begin G = 1\'b0; L = 1\'b1; E = 1\'b0;end',f:'alu_2_design.v',l:'1182',h:'1',c:'g'}
+,{cr:'c',t:'E',z:'            else begin G = 1\'b0; L = 1\'b0; E = 1\'b1;end',f:'alu_2_design.v',l:'1183',h:'2',c:'g'}
+]},
+{anchor:'cvg317',items:[{z:'        4\'b1001: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1191',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        4\'b1001: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1191',h:'6',c:'g'}
+,{cr:'c',t:'E',z:'            else begin @(posedge clk);',f:'alu_2_design.v',l:'1197',h:'1',c:'g'}
+]},
+{anchor:'cvg318',items:[{z:'        4\'b1010: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1202',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        4\'b1010: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1202',h:'5',c:'g'}
+,{cr:'m',t:'E',z:'            else begin @(posedge clk); ',f:'alu_2_design.v',l:'1208',h:'0',c:'r'}
+]},
+{anchor:'cvg319',items:[{z:'        4\'b1011: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1213',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'        4\'b1011: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1213',h:'5',c:'g'}
+,{cr:'m',t:'E',z:'            else begin @(posedge clk); ',f:'alu_2_design.v',l:'1217',h:'0',c:'r'}
+]},
+{anchor:'cvg320',items:[{z:'            oflow = (res[N-1] != opa[N-1]  && res[N-1] != opb[N-1]) ? 1 :...',f:'alu_2_design.v',l:'1216',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            oflow = (res[N-1] != opa[N-1]  && res[N-1] != opb[N-1]) ? 1 :...',f:'alu_2_design.v',l:'1216',h:'1',c:'g'}
+,{cr:'c',t:'E',z:'            oflow = (res[N-1] != opa[N-1]  && res[N-1] != opb[N-1]) ? 1 :...',f:'alu_2_design.v',l:'1216',h:'4',c:'g'}
+]},
+{anchor:'cvg321',items:[{z:'         4\'b1100: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1222',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'         4\'b1100: begin if(in_val == 2\'b11) begin',f:'alu_2_design.v',l:'1222',h:'4',c:'g'}
+,{cr:'m',t:'E',z:'            else begin @(posedge clk); ',f:'alu_2_design.v',l:'1226',h:'0',c:'r'}
+]},
+{anchor:'cvg322',items:[{z:'            oflow = ($signed(opa)<$signed(opb)) ? 1 : 0 ;end',f:'alu_2_design.v',l:'1225',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            oflow = ($signed(opa)<$signed(opb)) ? 1 : 0 ;end',f:'alu_2_design.v',l:'1225',h:'3',c:'g'}
+,{cr:'c',t:'E',z:'            oflow = ($signed(opa)<$signed(opb)) ? 1 : 0 ;end',f:'alu_2_design.v',l:'1225',h:'1',c:'g'}
+]},
+{anchor:'cvg323',items:[{z:'            case(cmd)',f:'alu_2_design.v',l:'1235',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'            4\'b0000:begin',f:'alu_2_design.v',l:'1236',h:'9',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b0001:begin',f:'alu_2_design.v',l:'1246',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b0010:begin',f:'alu_2_design.v',l:'1258',h:'3',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b0011:begin',f:'alu_2_design.v',l:'1271',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b0100:begin',f:'alu_2_design.v',l:'1285',h:'3',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b0101:begin',f:'alu_2_design.v',l:'1297',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b0110:begin',f:'alu_2_design.v',l:'1308',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b0111:begin',f:'alu_2_design.v',l:'1319',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b1000:begin',f:'alu_2_design.v',l:'1329',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b1001:begin',f:'alu_2_design.v',l:'1339',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b1010:begin',f:'alu_2_design.v',l:'1349',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b1011:begin',f:'alu_2_design.v',l:'1359',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b1100:begin',f:'alu_2_design.v',l:'1369',h:'7',c:'g'}
+,{cr:'c',t:'T',z:'            4\'b1101:begin',f:'alu_2_design.v',l:'1383',h:'8',c:'g'}
+,{cr:'c',t:'A',z:'            case(cmd)',f:'alu_2_design.v',l:'1235',h:'4',c:'g'}
+]},
+{anchor:'cvg324',items:[{z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1237',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1237',h:'6',c:'g'}
+,{cr:'c',t:'E',z:'                else begin @(posedge clk); ',f:'alu_2_design.v',l:'1241',h:'3',c:'g'}
+]},
+{anchor:'cvg325',items:[{z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1247',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1247',h:'2',c:'g'}
+,{cr:'c',t:'E',z:'                else begin @(posedge clk); ',f:'alu_2_design.v',l:'1251',h:'2',c:'g'}
+]},
+{anchor:'cvg326',items:[{z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1259',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1259',h:'3',c:'g'}
+,{cr:'m',t:'E',z:'                else begin @(posedge clk);',f:'alu_2_design.v',l:'1263',h:'0',c:'r'}
+]},
+{anchor:'cvg327',items:[{z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1272',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1272',h:'2',c:'g'}
+,{cr:'m',t:'E',z:'                else begin @(posedge clk); ',f:'alu_2_design.v',l:'1276',h:'0',c:'r'}
+]},
+{anchor:'cvg328',items:[{z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1286',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1286',h:'3',c:'g'}
+,{cr:'m',t:'E',z:'                else begin @(posedge clk); ',f:'alu_2_design.v',l:'1290',h:'0',c:'r'}
+]},
+{anchor:'cvg329',items:[{z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1298',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1298',h:'2',c:'g'}
+,{cr:'m',t:'E',z:'                else begin @(posedge clk); ',f:'alu_2_design.v',l:'1302',h:'0',c:'r'}
+]},
+{anchor:'cvg330',items:[{z:'                if(in_val == 2\'b11 || in_val == 2\'b01)begin ',f:'alu_2_design.v',l:'1309',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11 || in_val == 2\'b01)begin ',f:'alu_2_design.v',l:'1309',h:'3',c:'g'}
+,{cr:'c',t:'E',z:'                else begin @(posedge clk); ',f:'alu_2_design.v',l:'1313',h:'1',c:'g'}
+]},
+{anchor:'cvg331',items:[{z:'                if(in_val == 2\'b11 || in_val == 2\'b10)begin ',f:'alu_2_design.v',l:'1320',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11 || in_val == 2\'b10)begin ',f:'alu_2_design.v',l:'1320',h:'3',c:'g'}
+,{cr:'c',t:'E',z:'                else begin @(posedge clk); ',f:'alu_2_design.v',l:'1324',h:'1',c:'g'}
+]},
+{anchor:'cvg332',items:[{z:'                if(in_val == 2\'b11 || in_val == 2\'b01)begin ',f:'alu_2_design.v',l:'1330',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11 || in_val == 2\'b01)begin ',f:'alu_2_design.v',l:'1330',h:'3',c:'g'}
+,{cr:'c',t:'E',z:'                else begin @(posedge clk); ',f:'alu_2_design.v',l:'1334',h:'1',c:'g'}
+]},
+{anchor:'cvg333',items:[{z:'                if(in_val == 2\'b11 || in_val == 2\'b01)begin ',f:'alu_2_design.v',l:'1340',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11 || in_val == 2\'b01)begin ',f:'alu_2_design.v',l:'1340',h:'3',c:'g'}
+,{cr:'c',t:'E',z:'                else begin @(posedge clk); ',f:'alu_2_design.v',l:'1344',h:'1',c:'g'}
+]},
+{anchor:'cvg334',items:[{z:'                if(in_val == 2\'b11 || in_val == 2\'b10)begin ',f:'alu_2_design.v',l:'1350',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11 || in_val == 2\'b10)begin ',f:'alu_2_design.v',l:'1350',h:'3',c:'g'}
+,{cr:'c',t:'E',z:'                else begin @(posedge clk);',f:'alu_2_design.v',l:'1354',h:'1',c:'g'}
+]},
+{anchor:'cvg335',items:[{z:'                if(in_val == 2\'b11 || in_val == 2\'b10)begin ',f:'alu_2_design.v',l:'1360',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11 || in_val == 2\'b10)begin ',f:'alu_2_design.v',l:'1360',h:'3',c:'g'}
+,{cr:'c',t:'E',z:'                else begin @(posedge clk);',f:'alu_2_design.v',l:'1364',h:'1',c:'g'}
+]},
+{anchor:'cvg336',items:[{z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1370',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1370',h:'6',c:'g'}
+,{cr:'c',t:'E',z:'                else begin @(posedge clk); ',f:'alu_2_design.v',l:'1377',h:'1',c:'g'}
+]},
+{anchor:'cvg337',items:[{z:'                err = (opb[N-1 : $clog2(N)-1] != 0) ? 1 : 0;',f:'alu_2_design.v',l:'1372',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                err = (opb[N-1 : $clog2(N)-1] != 0) ? 1 : 0;',f:'alu_2_design.v',l:'1372',h:'3',c:'g'}
+,{cr:'c',t:'E',z:'                err = (opb[N-1 : $clog2(N)-1] != 0) ? 1 : 0;',f:'alu_2_design.v',l:'1372',h:'3',c:'g'}
+]},
+{anchor:'cvg338',items:[{z:'                if(opb > 0 && opb < N) res = (opa << opb) | (opa >> (N-op...',f:'alu_2_design.v',l:'1373',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(opb > 0 && opb < N) res = (opa << opb) | (opa >> (N-op...',f:'alu_2_design.v',l:'1373',h:'3',c:'g'}
+,{cr:'c',t:'T',z:'                else if (opb == 0) res = opa;',f:'alu_2_design.v',l:'1374',h:'1',c:'g'}
+,{cr:'c',t:'E',z:'                else res = 0;',f:'alu_2_design.v',l:'1375',h:'2',c:'g'}
+]},
+{anchor:'cvg339',items:[{z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1384',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(in_val == 2\'b11)begin ',f:'alu_2_design.v',l:'1384',h:'7',c:'g'}
+,{cr:'c',t:'E',z:'                else begin @(posedge clk); ',f:'alu_2_design.v',l:'1391',h:'1',c:'g'}
+]},
+{anchor:'cvg340',items:[{z:'                err = (opb[N-1 : $clog2(N)-1] != 0) ? 1 : 0;',f:'alu_2_design.v',l:'1386',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                err = (opb[N-1 : $clog2(N)-1] != 0) ? 1 : 0;',f:'alu_2_design.v',l:'1386',h:'3',c:'g'}
+,{cr:'c',t:'E',z:'                err = (opb[N-1 : $clog2(N)-1] != 0) ? 1 : 0;',f:'alu_2_design.v',l:'1386',h:'4',c:'g'}
+]},
+{anchor:'cvg341',items:[{z:'                if(opb > 0 && opb < N) res = (opa >> opb) | (opa << (N - ...',f:'alu_2_design.v',l:'1387',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                if(opb > 0 && opb < N) res = (opa >> opb) | (opa << (N - ...',f:'alu_2_design.v',l:'1387',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                else if (opb == 0) res = opa;',f:'alu_2_design.v',l:'1388',h:'1',c:'g'}
+,{cr:'c',t:'E',z:'                else res = 0;',f:'alu_2_design.v',l:'1389',h:'2',c:'g'}
+]}],
+b5:[{dummy:0},
+{anchor:'cvg6',items:[{z:'        if (fail_count == 0)',f:'alu_2_design.v',l:'121',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'        if (fail_count == 0)',f:'alu_2_design.v',l:'121',h:'0',c:'r'}
+,{cr:'c',t:'E',z:'        else',f:'alu_2_design.v',l:'123',h:'1',c:'g'}
+]}],
+b600:[{dummy:0},
+{anchor:'cvg601',items:[{z:'            if (RES_dut === 0 && ERR_dut === 0 && OFLOW_dut === 0 &&',f:'alu_2_design.v',l:'140',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'            if (RES_dut === 0 && ERR_dut === 0 && OFLOW_dut === 0 &&',f:'alu_2_design.v',l:'140',h:'1',c:'g'}
+,{cr:'m',t:'E',z:'            end else begin',f:'alu_2_design.v',l:'144',h:'0',c:'r'}
+]}],
+b604:[{dummy:0},
+{anchor:'cvg605',items:[{z:'            if (RES_dut === 0 && ERR_dut === 0) begin',f:'alu_2_design.v',l:'170',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'            if (RES_dut === 0 && ERR_dut === 0) begin',f:'alu_2_design.v',l:'170',h:'1',c:'g'}
+,{cr:'m',t:'E',z:'            end else begin',f:'alu_2_design.v',l:'173',h:'0',c:'r'}
+]}],
+b608:[{dummy:0},
+{anchor:'cvg609',items:[{z:'            if (RES_dut === held_res && ERR_dut === held_err &&',f:'alu_2_design.v',l:'211',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'            if (RES_dut === held_res && ERR_dut === held_err &&',f:'alu_2_design.v',l:'211',h:'1',c:'g'}
+,{cr:'m',t:'E',z:'            end else begin',f:'alu_2_design.v',l:'217',h:'0',c:'r'}
+]}],
+b616:[{dummy:0},
+{anchor:'cvg617',items:[{z:'            if (ERR_dut === ERR_ref) begin',f:'alu_2_design.v',l:'551',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'            if (ERR_dut === ERR_ref) begin',f:'alu_2_design.v',l:'551',h:'0',c:'r'}
+,{cr:'c',t:'E',z:'            end else begin',f:'alu_2_design.v',l:'555',h:'1',c:'g'}
+]}],
+b618:[{dummy:0},
+{anchor:'cvg619',items:[{z:'            if (compare_outputs(1\'b0)) begin',f:'alu_2_design.v',l:'586',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (compare_outputs(1\'b0)) begin',f:'alu_2_design.v',l:'586',h:'14',c:'g'}
+,{cr:'c',t:'E',z:'            end else begin',f:'alu_2_design.v',l:'590',h:'130',c:'g'}
+]}],
+b620:[{dummy:0},
+{anchor:'cvg621',items:[{z:'            if (compare_outputs(1\'b0)) begin',f:'alu_2_design.v',l:'622',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'            if (compare_outputs(1\'b0)) begin',f:'alu_2_design.v',l:'622',h:'0',c:'r'}
+,{cr:'c',t:'E',z:'            end else begin',f:'alu_2_design.v',l:'626',h:'11',c:'g'}
+]}],
+b622:[{dummy:0},
+{anchor:'cvg623',items:[{z:'            if (RES_dut[2*N-1:0] !== RES_ref)  compare_outputs = 0;',f:'alu_2_design.v',l:'640',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (RES_dut[2*N-1:0] !== RES_ref)  compare_outputs = 0;',f:'alu_2_design.v',l:'640',h:'45',c:'g'}
+,{cr:'c',t:'A',z:'            if (RES_dut[2*N-1:0] !== RES_ref)  compare_outputs = 0;',f:'alu_2_design.v',l:'640',h:'110',c:'g'}
+]},
+{anchor:'cvg624',items:[{z:'            if (ERR_dut   !== ERR_ref)           compare_outputs = 0;',f:'alu_2_design.v',l:'641',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (ERR_dut   !== ERR_ref)           compare_outputs = 0;',f:'alu_2_design.v',l:'641',h:'9',c:'g'}
+,{cr:'c',t:'A',z:'            if (ERR_dut   !== ERR_ref)           compare_outputs = 0;',f:'alu_2_design.v',l:'641',h:'146',c:'g'}
+]},
+{anchor:'cvg625',items:[{z:'            if (OFLOW_dut !== OFLOW_ref)         compare_outputs = 0;',f:'alu_2_design.v',l:'642',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (OFLOW_dut !== OFLOW_ref)         compare_outputs = 0;',f:'alu_2_design.v',l:'642',h:'70',c:'g'}
+,{cr:'c',t:'A',z:'            if (OFLOW_dut !== OFLOW_ref)         compare_outputs = 0;',f:'alu_2_design.v',l:'642',h:'85',c:'g'}
+]},
+{anchor:'cvg626',items:[{z:'            if(COUT_dut !== COUT_ref)            compare_outputs = 0;',f:'alu_2_design.v',l:'643',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if(COUT_dut !== COUT_ref)            compare_outputs = 0;',f:'alu_2_design.v',l:'643',h:'67',c:'g'}
+,{cr:'c',t:'A',z:'            if(COUT_dut !== COUT_ref)            compare_outputs = 0;',f:'alu_2_design.v',l:'643',h:'88',c:'g'}
+]},
+{anchor:'cvg627',items:[{z:'            if (G_dut     !== G_ref)             compare_outputs = 0;',f:'alu_2_design.v',l:'644',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (G_dut     !== G_ref)             compare_outputs = 0;',f:'alu_2_design.v',l:'644',h:'3',c:'g'}
+,{cr:'c',t:'A',z:'            if (G_dut     !== G_ref)             compare_outputs = 0;',f:'alu_2_design.v',l:'644',h:'152',c:'g'}
+]},
+{anchor:'cvg628',items:[{z:'            if (L_dut     !== L_ref)             compare_outputs = 0;',f:'alu_2_design.v',l:'645',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (L_dut     !== L_ref)             compare_outputs = 0;',f:'alu_2_design.v',l:'645',h:'114',c:'g'}
+,{cr:'c',t:'A',z:'            if (L_dut     !== L_ref)             compare_outputs = 0;',f:'alu_2_design.v',l:'645',h:'41',c:'g'}
+]},
+{anchor:'cvg629',items:[{z:'            if (E_dut     !== E_ref)             compare_outputs = 0;',f:'alu_2_design.v',l:'646',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            if (E_dut     !== E_ref)             compare_outputs = 0;',f:'alu_2_design.v',l:'646',h:'9',c:'g'}
+,{cr:'c',t:'A',z:'            if (E_dut     !== E_ref)             compare_outputs = 0;',f:'alu_2_design.v',l:'646',h:'146',c:'g'}
+]}],
+b2:[{dummy:0},
+{anchor:'cvg423',items:[{z:'        if (fail_count == 0)',f:'alu_2_design.v',l:'121',c:'Y',p:'50.00'}
+,{cr:'m',t:'I',z:'        if (fail_count == 0)',f:'alu_2_design.v',l:'121',h:'0',c:'r'}
+,{cr:'c',t:'E',z:'        else',f:'alu_2_design.v',l:'123',h:'1',c:'g'}
+]}],
+dummyEnd:0
+};
+processBranchesData(g_data);

@@ -1,0 +1,499 @@
+# vsim -c alu_testbench 
+# Start time: 11:11:12 on May 11,2026
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: alu_2_design.v(1083): (vopt-2892) Net type of 'opa' must be explicitly declared.
+# ** Warning: alu_2_design.v(1083): (vopt-2892) Net type of 'opb' must be explicitly declared.
+# ** Warning: alu_2_design.v(1083): (vopt-2892) Net type of 'rst' must be explicitly declared.
+# ** Warning: alu_2_design.v(1083): (vopt-2892) Net type of 'ce' must be explicitly declared.
+# ** Warning: alu_2_design.v(1083): (vopt-2892) Net type of 'mode' must be explicitly declared.
+# ** Warning: alu_2_design.v(1083): (vopt-2892) Net type of 'cmd' must be explicitly declared.
+# ** Warning: alu_2_design.v(1083): (vopt-2892) Net type of 'in_val' must be explicitly declared.
+# ** Warning: alu_2_design.v(1083): (vopt-2892) Net type of 'clk' must be explicitly declared.
+# ** Warning: alu_2_design.v(1083): (vopt-2892) Net type of 'c_in' must be explicitly declared.
+# //  Questa Sim
+# //  Version 10.6c linux Jul 25 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.alu_testbench(fast)
+# 
+# === DIRECT CASES ===
+# 
+# --- RST: Async Assert/Deassert (ID2) ---
+# [PASS] RST async assert all outputs zero immediately
+# [PASS] RST deassert then ADD               OPA=0f OPB=01 CMD=0000 MODE=1 IN_VAL=11
+# 
+# --- RST during ALU operation (ID3) ---
+# [FAIL] pre-rst ADD                         OPA=aa OPB=bb CMD=0000 MODE=1 IN_VAL=11
+#   DUT: res=0165 oflow=1 cout=1 G=0 L=0 E=0 err=0
+#   REF: res=0165 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [PASS] RST during op  operation aborted, outputs reset
+# [PASS] post-rst op                         OPA=0f OPB=01 CMD=0000 MODE=1 IN_VAL=11
+# 
+# --- CE enable / disable (ID4, ID5) ---
+# [PASS] CE=1 ADD executes                   OPA=0f OPB=01 CMD=0000 MODE=1 IN_VAL=11
+# [PASS] CE=0 output holds                   OPA=aa OPB=bb CMD=0000 MODE=1 IN_VAL=11
+# 
+# --- Arithmetic Operations MODE=1 (ID6-21) ---
+# [PASS] ADD normal                          OPA=0f OPB=01 CMD=0000 MODE=1 IN_VAL=11
+# [FAIL] ADD carry out                       OPA=ff OPB=01 CMD=0000 MODE=1 IN_VAL=11
+#   DUT: res=0100 oflow=1 cout=1 G=0 L=0 E=0 err=0
+#   REF: res=0100 oflow=0 cout=1 G=0 L=0 E=0 err=0
+# [PASS] ADD zero                            OPA=00 OPB=00 CMD=0000 MODE=1 IN_VAL=11
+# [PASS] SUB normal                          OPA=20 OPB=10 CMD=0001 MODE=1 IN_VAL=11
+# [PASS] SUB underflow->oflow                OPA=10 OPB=20 CMD=0001 MODE=1 IN_VAL=11
+# [PASS] SUB zero                            OPA=00 OPB=00 CMD=0001 MODE=1 IN_VAL=11
+# [PASS] ADD_CIN Cin=0                       OPA=ff OPB=00 CMD=0010 MODE=1 IN_VAL=11
+# [FAIL] ADD_CIN Cin=1 carry                 OPA=ff OPB=00 CMD=0010 MODE=1 IN_VAL=11
+#   DUT: res=0100 oflow=1 cout=1 G=0 L=0 E=0 err=0
+#   REF: res=0100 oflow=0 cout=1 G=0 L=0 E=0 err=0
+# [PASS] ADD_CIN c=1 normal                  OPA=10 OPB=20 CMD=0010 MODE=1 IN_VAL=11
+# [PASS] ADD_CIN zero                        OPA=00 OPB=00 CMD=0010 MODE=1 IN_VAL=11
+# [PASS] SUB_BOR Cin=0                       OPA=20 OPB=10 CMD=0011 MODE=1 IN_VAL=11
+# [PASS] SUB_BOR Cin=1                       OPA=0f OPB=01 CMD=0011 MODE=1 IN_VAL=11
+# [PASS] SUB_BOR underflow                   OPA=01 OPB=0f CMD=0011 MODE=1 IN_VAL=11
+# [FAIL] INC_OPA normal                      OPA=0a OPB=00 CMD=0100 MODE=1 IN_VAL=11
+#   DUT: res=000b oflow=1 cout=0 G=0 L=0 E=0 err=0
+#   REF: res=000b oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] INC_OPA iv=01                       OPA=0a OPB=00 CMD=0100 MODE=1 IN_VAL=01
+#   DUT: res=000b oflow=1 cout=0 G=0 L=0 E=0 err=0
+#   REF: res=000b oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] DEC_OPA normal                      OPA=0a OPB=00 CMD=0101 MODE=1 IN_VAL=11
+#   DUT: res=0009 oflow=1 cout=0 G=0 L=0 E=0 err=0
+#   REF: res=0009 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] DEC_OPA iv=01                       OPA=0a OPB=00 CMD=0101 MODE=1 IN_VAL=01
+#   DUT: res=0009 oflow=1 cout=0 G=0 L=0 E=0 err=0
+#   REF: res=0009 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] INC_OPB normal                      OPA=00 OPB=0a CMD=0110 MODE=1 IN_VAL=11
+#   DUT: res=000b oflow=1 cout=0 G=0 L=0 E=0 err=0
+#   REF: res=000b oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] INC_OPB iv=10                       OPA=00 OPB=0a CMD=0110 MODE=1 IN_VAL=10
+#   DUT: res=000b oflow=1 cout=0 G=0 L=0 E=0 err=0
+#   REF: res=000b oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] DEC_OPB normal                      OPA=00 OPB=0a CMD=0111 MODE=1 IN_VAL=11
+#   DUT: res=0009 oflow=1 cout=0 G=0 L=0 E=0 err=0
+#   REF: res=0009 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] DEC_OPB iv=10                       OPA=00 OPB=0a CMD=0111 MODE=1 IN_VAL=10
+#   DUT: res=0009 oflow=1 cout=0 G=0 L=0 E=0 err=0
+#   REF: res=0009 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CMP OPA>OPB -> G                    OPA=ff OPB=01 CMD=1000 MODE=1 IN_VAL=11
+#   DUT: res=0009 oflow=1 cout=0 G=1 L=0 E=0 err=0
+#   REF: res=0009 oflow=0 cout=0 G=1 L=0 E=0 err=0
+# [FAIL] CMP OPA<OPB -> L                    OPA=01 OPB=ff CMD=1000 MODE=1 IN_VAL=11
+#   DUT: res=0009 oflow=1 cout=0 G=0 L=1 E=0 err=0
+#   REF: res=0009 oflow=0 cout=0 G=0 L=1 E=0 err=0
+# [FAIL] CMP OPA==OPB -> E                   OPA=aa OPB=aa CMD=1000 MODE=1 IN_VAL=11
+#   DUT: res=0009 oflow=1 cout=0 G=0 L=0 E=1 err=0
+#   REF: res=0009 oflow=0 cout=0 G=0 L=0 E=1 err=0
+# [FAIL] CMP zero equal -> E                 OPA=00 OPB=00 CMD=1000 MODE=1 IN_VAL=11
+#   DUT: res=0009 oflow=1 cout=0 G=0 L=0 E=1 err=0
+#   REF: res=0009 oflow=0 cout=0 G=0 L=0 E=1 err=0
+# [FAIL] MUL (3)*(4)=12                      OPA=02 OPB=03 CMD=1001 MODE=1 IN_VAL=11
+#   DUT: res=000c oflow=1 cout=0 G=0 L=0 E=1 err=0
+#   REF: res=000c oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] MUL 1*1=1                           OPA=00 OPB=00 CMD=1001 MODE=1 IN_VAL=11
+#   DUT: res=0001 oflow=1 cout=0 G=0 L=0 E=1 err=0
+#   REF: res=0001 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] MUL max                             OPA=ff OPB=ff CMD=1001 MODE=1 IN_VAL=11
+#   DUT: res=0000 oflow=1 cout=0 G=0 L=0 E=1 err=0
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] MUL_SHL normal                      OPA=02 OPB=03 CMD=1010 MODE=1 IN_VAL=11
+#   DUT: res=000c oflow=1 cout=0 G=0 L=0 E=1 err=0
+#   REF: res=000c oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] MUL_SHL max                         OPA=ff OPB=ff CMD=1010 MODE=1 IN_VAL=11
+#   DUT: res=fc02 oflow=1 cout=0 G=0 L=0 E=1 err=0
+#   REF: res=fc02 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] FLUSH after MUL                     OPA=00 OPB=00 CMD=0000 MODE=1 IN_VAL=11
+#   DUT: res=0000 oflow=0 cout=0 G=0 L=0 E=1 err=0
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] SADD +ve overflow                   OPA=3f OPB=3f CMD=1011 MODE=1 IN_VAL=11
+#   DUT: res=007e oflow=0 cout=0 G=0 L=0 E=1 err=0
+#   REF: res=007e oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] SADD -ve overflow                   OPA=c0 OPB=c0 CMD=1011 MODE=1 IN_VAL=11
+#   DUT: res=0180 oflow=0 cout=1 G=0 L=0 E=1 err=0
+#   REF: res=ff80 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] SADD +1+(-1)=0                      OPA=01 OPB=ff CMD=1011 MODE=1 IN_VAL=11
+#   DUT: res=0000 oflow=0 cout=0 G=1 L=0 E=0 err=0
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] SADD zero                           OPA=00 OPB=00 CMD=1011 MODE=1 IN_VAL=11
+#   DUT: res=0000 oflow=0 cout=0 G=0 L=0 E=1 err=0
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] SSUB max-(-1)                       OPA=7f OPB=ff CMD=1100 MODE=1 IN_VAL=11
+#   DUT: res=0080 oflow=1 cout=0 G=1 L=0 E=0 err=0
+#   REF: res=0080 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] SSUB 0-1                            OPA=00 OPB=01 CMD=1100 MODE=1 IN_VAL=11
+#   DUT: res=01ff oflow=0 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=ffff oflow=1 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] SSUB min overflow                   OPA=80 OPB=01 CMD=1100 MODE=1 IN_VAL=11
+#   DUT: res=017f oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=ff7f oflow=1 cout=0 G=0 L=0 E=0 err=0
+# 
+# --- Logical Operations MODE=0 (ID22-35) ---
+# [FAIL] AND normal                          OPA=ff OPB=0f CMD=0000 MODE=0 IN_VAL=11
+#   DUT: res=000f oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=000f oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] AND zero                            OPA=00 OPB=ff CMD=0000 MODE=0 IN_VAL=11
+#   DUT: res=0000 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] NAND all ones                       OPA=ff OPB=ff CMD=0001 MODE=0 IN_VAL=11
+#   DUT: res=ff00 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=ff00 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] NAND zero                           OPA=00 OPB=00 CMD=0001 MODE=0 IN_VAL=11
+#   DUT: res=ffff oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=ffff oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] OR normal                           OPA=f0 OPB=0f CMD=0010 MODE=0 IN_VAL=11
+#   DUT: res=00ff oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=00ff oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] OR zero                             OPA=00 OPB=00 CMD=0010 MODE=0 IN_VAL=11
+#   DUT: res=0000 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] NOR zero                            OPA=00 OPB=00 CMD=0011 MODE=0 IN_VAL=11
+#   DUT: res=ffff oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=ffff oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] NOR all ones                        OPA=ff OPB=ff CMD=0011 MODE=0 IN_VAL=11
+#   DUT: res=ff00 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=ff00 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] XOR same->0                         OPA=ff OPB=ff CMD=0100 MODE=0 IN_VAL=11
+#   DUT: res=0000 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] XOR->FF                             OPA=aa OPB=55 CMD=0100 MODE=0 IN_VAL=11
+#   DUT: res=00ff oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=00ff oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] XNOR same->FF                       OPA=ff OPB=ff CMD=0101 MODE=0 IN_VAL=11
+#   DUT: res=ffff oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=ffff oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] XNOR->00                            OPA=aa OPB=55 CMD=0101 MODE=0 IN_VAL=11
+#   DUT: res=ff00 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=ff00 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] NOT_OPA iv=01                       OPA=aa OPB=00 CMD=0110 MODE=0 IN_VAL=01
+#   DUT: res=ff55 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=ff55 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] NOT_OPA iv=11                       OPA=00 OPB=00 CMD=0110 MODE=0 IN_VAL=11
+#   DUT: res=ffff oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=ffff oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] NOT_OPB iv=10                       OPA=00 OPB=aa CMD=0111 MODE=0 IN_VAL=10
+#   DUT: res=ff55 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=ff55 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] NOT_OPB iv=11                       OPA=00 OPB=ff CMD=0111 MODE=0 IN_VAL=11
+#   DUT: res=ff00 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=ff00 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] SHR_OPA normal                      OPA=aa OPB=00 CMD=1000 MODE=0 IN_VAL=11
+#   DUT: res=0055 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0055 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] SHR_OPA LSB drop                    OPA=01 OPB=00 CMD=1000 MODE=0 IN_VAL=01
+#   DUT: res=0000 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] SHL_OPA normal                      OPA=aa OPB=00 CMD=1001 MODE=0 IN_VAL=11
+#   DUT: res=0154 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0154 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] SHL_OPA MSB drop                    OPA=80 OPB=00 CMD=1001 MODE=0 IN_VAL=01
+#   DUT: res=0100 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0100 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] SHR_OPB normal                      OPA=00 OPB=aa CMD=1010 MODE=0 IN_VAL=11
+#   DUT: res=0055 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0055 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] SHR_OPB LSB drop                    OPA=00 OPB=01 CMD=1010 MODE=0 IN_VAL=10
+#   DUT: res=0000 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] SHL_OPB normal                      OPA=00 OPB=aa CMD=1011 MODE=0 IN_VAL=11
+#   DUT: res=0154 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0154 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] SHL_OPB MSB drop                    OPA=00 OPB=80 CMD=1011 MODE=0 IN_VAL=10
+#   DUT: res=0100 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0100 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] ROL by 1                            OPA=aa OPB=01 CMD=1100 MODE=0 IN_VAL=11
+#   DUT: res=0055 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0155 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] ROL by 4                            OPA=aa OPB=04 CMD=1100 MODE=0 IN_VAL=11
+#   DUT: res=00aa oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0aaa oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] ROL by 0->same                      OPA=aa OPB=00 CMD=1100 MODE=0 IN_VAL=11
+#   DUT: res=00aa oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=00aa oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] ROL 0x01 by 1->0x02                 OPA=01 OPB=01 CMD=1100 MODE=0 IN_VAL=11
+#   DUT: res=0002 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0002 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] ROR by 1                            OPA=aa OPB=01 CMD=1101 MODE=0 IN_VAL=11
+#   DUT: res=0055 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=5555 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] ROR by 4                            OPA=aa OPB=04 CMD=1101 MODE=0 IN_VAL=11
+#   DUT: res=00aa oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0aaa oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] ROR by 0->same                      OPA=aa OPB=00 CMD=1101 MODE=0 IN_VAL=11
+#   DUT: res=00aa oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=00aa oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] ROR 0x80 by 1->0x40                 OPA=80 OPB=01 CMD=1101 MODE=0 IN_VAL=11
+#   DUT: res=0040 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=4040 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# 
+# --- IN_VAL tests (ID36-40) ---
+# [FAIL] IV=1 MODE1 cmd4 INC_A ok            OPA=0a OPB=00 CMD=0100 MODE=1 IN_VAL=01
+#   DUT: res=000b oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=000b oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] IV=1 MODE1 cmd5 DEC_A ok            OPA=0a OPB=00 CMD=0101 MODE=1 IN_VAL=01
+#   DUT: res=0009 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0009 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] IV=2 MODE1 cmd6 INC_B ok            OPA=00 OPB=0a CMD=0110 MODE=1 IN_VAL=10
+#   DUT: res=000b oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=000b oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] IV=2 MODE1 cmd7 DEC_B ok            OPA=00 OPB=0a CMD=0111 MODE=1 IN_VAL=10
+#   DUT: res=0009 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0009 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] IV=1 MODE0 cmd6 NOT_A ok            OPA=aa OPB=00 CMD=0110 MODE=0 IN_VAL=01
+#   DUT: res=ff55 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=ff55 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] IV=1 MODE0 cmd8 SHR_A ok            OPA=aa OPB=00 CMD=1000 MODE=0 IN_VAL=01
+#   DUT: res=0055 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0055 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] IV=1 MODE0 cmd9 SHL_A ok            OPA=aa OPB=00 CMD=1001 MODE=0 IN_VAL=01
+#   DUT: res=0154 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0154 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] IV=2 MODE0 cmd7 NOT_B ok            OPA=00 OPB=aa CMD=0111 MODE=0 IN_VAL=10
+#   DUT: res=ff55 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=ff55 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] IV=2 MODE0 cmd10 SHR_B ok           OPA=00 OPB=aa CMD=1010 MODE=0 IN_VAL=10
+#   DUT: res=0055 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0055 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] IV=2 MODE0 cmd11 SHL_B ok           OPA=00 OPB=aa CMD=1011 MODE=0 IN_VAL=10
+#   DUT: res=0154 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0154 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] IV=3 MODE1 ADD ok                   OPA=0f OPB=01 CMD=0000 MODE=1 IN_VAL=11
+#   DUT: res=0010 oflow=0 cout=0 G=0 L=1 E=0 err=0
+#   REF: res=0010 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] IV=3 MODE0 AND ok                   OPA=ff OPB=0f CMD=0000 MODE=0 IN_VAL=11
+#   DUT: res=000f oflow=0 cout=0 G=0 L=1 E=0 err=0
+#   REF: res=000f oflow=0 cout=0 G=0 L=0 E=0 err=0
+# 
+# === CORNER CASES ===
+# [FAIL] CC ADD 255+1=0 Cout=1               OPA=ff OPB=01 CMD=0000 MODE=1 IN_VAL=11
+#   DUT: res=0100 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0100 oflow=0 cout=1 G=0 L=0 E=0 err=0
+# [FAIL] CC ADD 0+0=0 Cout=0                 OPA=00 OPB=00 CMD=0000 MODE=1 IN_VAL=11
+#   DUT: res=0000 oflow=0 cout=0 G=0 L=1 E=0 err=0
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC ADD 255+255 Cout=1               OPA=ff OPB=ff CMD=0000 MODE=1 IN_VAL=11
+#   DUT: res=01fe oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=01fe oflow=0 cout=1 G=0 L=0 E=0 err=0
+# [FAIL] CC SUB 0-255 oflow=1                OPA=00 OPB=ff CMD=0001 MODE=1 IN_VAL=11
+#   DUT: res=ff01 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=ff01 oflow=1 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC SUB 0-0=0 oflow=0                OPA=00 OPB=00 CMD=0001 MODE=1 IN_VAL=11
+#   DUT: res=0000 oflow=0 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC SUB 255-255=0 oflow=0            OPA=ff OPB=ff CMD=0001 MODE=1 IN_VAL=11
+#   DUT: res=0000 oflow=0 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC ADD_CIN 255+0+1=0 Cout=1         OPA=ff OPB=00 CMD=0010 MODE=1 IN_VAL=11
+#   DUT: res=0100 oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0100 oflow=0 cout=1 G=0 L=0 E=0 err=0
+# [FAIL] CC ADD_CIN 255+255+1=255            OPA=ff OPB=ff CMD=0010 MODE=1 IN_VAL=11
+#   DUT: res=01ff oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=01ff oflow=0 cout=1 G=0 L=0 E=0 err=0
+# [FAIL] CC SUB_CIN 0-255-1 oflow=1          OPA=00 OPB=ff CMD=0011 MODE=1 IN_VAL=11
+#   DUT: res=ff00 oflow=0 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=ff00 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC SUB_CIN 255-255-1 oflow=1        OPA=ff OPB=ff CMD=0011 MODE=1 IN_VAL=11
+#   DUT: res=ffff oflow=0 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=ffff oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC INC_OPA 255 wrap->0              OPA=ff OPB=00 CMD=0100 MODE=1 IN_VAL=11
+#   DUT: res=0100 oflow=0 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0100 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC INC_OPA iv=01 wrap->0            OPA=ff OPB=00 CMD=0100 MODE=1 IN_VAL=01
+#   DUT: res=0100 oflow=0 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0100 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC DEC_OPA 0 wrap->255              OPA=00 OPB=00 CMD=0101 MODE=1 IN_VAL=11
+#   DUT: res=ffff oflow=0 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=ffff oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC DEC_OPA iv=01 wrap->255          OPA=00 OPB=00 CMD=0101 MODE=1 IN_VAL=01
+#   DUT: res=ffff oflow=0 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=ffff oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC INC_OPB 255 wrap->0              OPA=00 OPB=ff CMD=0110 MODE=1 IN_VAL=11
+#   DUT: res=0100 oflow=0 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0100 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC INC_OPB iv=10 wrap->0            OPA=00 OPB=ff CMD=0110 MODE=1 IN_VAL=10
+#   DUT: res=0100 oflow=0 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0100 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC DEC_OPB 0 wrap->255              OPA=00 OPB=00 CMD=0111 MODE=1 IN_VAL=11
+#   DUT: res=ffff oflow=0 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=ffff oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC DEC_OPB iv=10 wrap->255          OPA=00 OPB=00 CMD=0111 MODE=1 IN_VAL=10
+#   DUT: res=ffff oflow=0 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=ffff oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC MUL pipeline input1              OPA=01 OPB=02 CMD=1001 MODE=1 IN_VAL=11
+#   DUT: res=0006 oflow=0 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0006 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC MUL pipeline input2              OPA=03 OPB=04 CMD=1001 MODE=1 IN_VAL=11
+#   DUT: res=0014 oflow=0 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0014 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC MUL pipeline input3              OPA=05 OPB=06 CMD=1001 MODE=1 IN_VAL=11
+#   DUT: res=002a oflow=0 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=002a oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC MUL_SHL pipeline input1          OPA=01 OPB=02 CMD=1010 MODE=1 IN_VAL=11
+#   DUT: res=0004 oflow=0 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0004 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC MUL_SHL pipeline input2          OPA=03 OPB=04 CMD=1010 MODE=1 IN_VAL=11
+#   DUT: res=0018 oflow=0 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0018 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC MUL_SHL 1 input                  OPA=01 OPB=01 CMD=1010 MODE=1 IN_VAL=11
+#   DUT: res=0002 oflow=0 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=0002 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC FLUSH after MUL                  OPA=00 OPB=00 CMD=0000 MODE=1 IN_VAL=11
+#   DUT: res=0000 oflow=0 cout=0 G=0 L=1 E=0 err=0
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC SADD 127+1 oflow=1               OPA=7f OPB=01 CMD=1011 MODE=1 IN_VAL=11
+#   DUT: res=0080 oflow=1 cout=0 G=1 L=0 E=0 err=0
+#   REF: res=0080 oflow=1 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC SSUB -128-1 oflow=1              OPA=80 OPB=01 CMD=1100 MODE=1 IN_VAL=11
+#   DUT: res=017f oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=ff7f oflow=1 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC mode->0 AND                      OPA=ff OPB=0f CMD=0000 MODE=0 IN_VAL=11
+#   DUT: res=000f oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=000f oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC mode->1 ADD same inputs          OPA=ff OPB=0f CMD=0000 MODE=1 IN_VAL=11
+#   DUT: res=010e oflow=1 cout=1 G=0 L=1 E=0 err=0
+#   REF: res=010e oflow=0 cout=1 G=0 L=0 E=0 err=0
+# [FAIL] CC MODE1 cmd0 ADD                   OPA=0f OPB=01 CMD=0000 MODE=1 IN_VAL=11
+#   DUT: res=0010 oflow=0 cout=0 G=0 L=1 E=0 err=0
+#   REF: res=0010 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC MODE1 cmd1 SUB same operands     OPA=0f OPB=01 CMD=0001 MODE=1 IN_VAL=11
+#   DUT: res=000e oflow=0 cout=0 G=0 L=1 E=0 err=0
+#   REF: res=000e oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC MODE0 cmd2 OR                    OPA=f0 OPB=0f CMD=0010 MODE=0 IN_VAL=11
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=0
+#   REF: res=00ff oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC MODE0 cmd4 XOR same operands     OPA=f0 OPB=0f CMD=0100 MODE=0 IN_VAL=11
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=0
+#   REF: res=00ff oflow=0 cout=0 G=0 L=0 E=0 err=0
+# 
+# === ERROR CASES ===
+# [FAIL] EC IN_VAL=0 MODE1 ADD->err          OPA=aa OPB=bb CMD=0000 MODE=1 IN_VAL=00
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IN_VAL=0 MODE0 AND->err          OPA=aa OPB=bb CMD=0000 MODE=0 IN_VAL=00
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=1 MODE1 cmd0 ADD->err         OPA=aa OPB=bb CMD=0000 MODE=1 IN_VAL=01
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=1 MODE1 cmd1 SUB->err         OPA=aa OPB=bb CMD=0001 MODE=1 IN_VAL=01
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=1 MODE1 cmd2->err             OPA=aa OPB=bb CMD=0010 MODE=1 IN_VAL=01
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=1 MODE1 cmd3->err             OPA=aa OPB=bb CMD=0011 MODE=1 IN_VAL=01
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=1 MODE1 cmd6->err             OPA=aa OPB=bb CMD=0110 MODE=1 IN_VAL=01
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=1 MODE1 cmd8 CMP->err         OPA=aa OPB=bb CMD=1000 MODE=1 IN_VAL=01
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=1 MODE1 cmd9 MUL->err         OPA=aa OPB=bb CMD=1001 MODE=1 IN_VAL=01
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=2 MODE1 cmd0 ADD->err         OPA=aa OPB=bb CMD=0000 MODE=1 IN_VAL=10
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=2 MODE1 cmd1 SUB->err         OPA=aa OPB=bb CMD=0001 MODE=1 IN_VAL=10
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=2 MODE1 cmd4->err             OPA=aa OPB=bb CMD=0100 MODE=1 IN_VAL=10
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=2 MODE1 cmd5->err             OPA=aa OPB=bb CMD=0101 MODE=1 IN_VAL=10
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=2 MODE1 cmd8 CMP->err         OPA=aa OPB=bb CMD=1000 MODE=1 IN_VAL=10
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=1 MODE0 cmd0 AND->err         OPA=aa OPB=bb CMD=0000 MODE=0 IN_VAL=01
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=1 MODE0 cmd1 NAND->err        OPA=aa OPB=bb CMD=0001 MODE=0 IN_VAL=01
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=1 MODE0 cmd7 NOT_B->err       OPA=aa OPB=bb CMD=0111 MODE=0 IN_VAL=01
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=1 MODE0 cmd10 SHR_B->err      OPA=aa OPB=bb CMD=1010 MODE=0 IN_VAL=01
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=1 MODE0 cmd11 SHL_B->err      OPA=aa OPB=bb CMD=1011 MODE=0 IN_VAL=01
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=1 MODE0 cmd13 ROR->err        OPA=aa OPB=01 CMD=1101 MODE=0 IN_VAL=01
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=2 MODE0 cmd0 AND->err         OPA=aa OPB=bb CMD=0000 MODE=0 IN_VAL=10
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=2 MODE0 cmd1 NAND->err        OPA=aa OPB=bb CMD=0001 MODE=0 IN_VAL=10
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=2 MODE0 cmd6 NOT_A->err       OPA=aa OPB=bb CMD=0110 MODE=0 IN_VAL=10
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=2 MODE0 cmd8 SHR_A->err       OPA=aa OPB=bb CMD=1000 MODE=0 IN_VAL=10
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=2 MODE0 cmd9 SHL_A->err       OPA=aa OPB=bb CMD=1001 MODE=0 IN_VAL=10
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC IV=2 MODE0 cmd12 ROL->err        OPA=aa OPB=01 CMD=1100 MODE=0 IN_VAL=10
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC ROL OPB=FF out-of-range->err     OPA=aa OPB=ff CMD=1100 MODE=0 IN_VAL=11
+#   DUT: res=00ff oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC ROL OPB=8 out-of-range->err      OPA=aa OPB=08 CMD=1100 MODE=0 IN_VAL=11
+#   DUT: res=00aa oflow=0 cout=0 G=0 L=1 E=0 err=0
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC ROR OPB=FF out-of-range->err     OPA=aa OPB=ff CMD=1101 MODE=0 IN_VAL=11
+#   DUT: res=00aa oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC ROR OPB=8 out-of-range->err      OPA=aa OPB=08 CMD=1101 MODE=0 IN_VAL=11
+#   DUT: res=00aa oflow=0 cout=0 G=0 L=1 E=0 err=0
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [FAIL] EC MODE0 cmd14 out-of-range         OPA=aa OPB=bb CMD=1110 MODE=0 IN_VAL=11
+#   DUT: res=00aa oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] EC MODE0 cmd15 out-of-range         OPA=aa OPB=bb CMD=1111 MODE=0 IN_VAL=11
+#   DUT: res=00aa oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] EC MODE1 cmd13 out-of-range         OPA=aa OPB=bb CMD=1101 MODE=1 IN_VAL=11
+#   DUT: res=00aa oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] EC MODE1 cmd14 out-of-range         OPA=aa OPB=bb CMD=1110 MODE=1 IN_VAL=11
+#   DUT: res=00aa oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] EC MODE1 cmd15 out-of-range         OPA=aa OPB=bb CMD=1111 MODE=1 IN_VAL=11
+#   DUT: res=00aa oflow=0 cout=0 G=0 L=1 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] EC MODE0->1 cmd13 baseline          OPA=aa OPB=01 CMD=1101 MODE=0 IN_VAL=11
+#   DUT: res=0055 oflow=0 cout=0 G=0 L=1 E=0 err=0
+#   REF: res=5555 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] EC MODE1 cmd13 -> err/default       OPA=aa OPB=01 CMD=1101 MODE=1 IN_VAL=11
+#   DUT err=1  REF err=0
+# 
+# =============================
+#   TOTAL : 159
+#   PASS  : 17
+#   FAIL  : 142
+# =============================
+# *** SOME TESTS FAILED ***
+# 
+# ** Note: $finish    : alu_2_design.v(127)
+#    Time: 3456 ns  Iteration: 0  Instance: /alu_testbench
+# End time: 11:11:19 on May 11,2026, Elapsed time: 0:00:07
+# Errors: 0, Warnings: 9

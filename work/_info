@@ -1,0 +1,180 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/fetools/work_area/frontend/Batch_11/RohitSabnani/ALU_Project
+T_opt
+!s110 1778232137
+VFPm??zLgaVbloe;9^1maK2
+04 2 4 work tb fast 0
+=1-6805caf5892e-69fdab49-250de-19163
+Z1 o-quiet -auto_acc_if_foreign -work work
+Z2 tCvgOpt 0
+n@_opt
+Z3 OE;O;10.6c;65
+R0
+T_opt1
+!s110 1778478139
+VHc4[kXaE6TSKKRac]N=gI0
+04 13 4 work alu_testbench fast 0
+=1-6805caf5892e-6a016c3b-52f0f-16d79
+R1
+R2
+n@_opt1
+R3
+valu_design
+!s110 1778425225
+!i10b 1
+!s100 UE@g5iT:0?A0zkfDaI5Ej3
+I;Ri>RFnSdcdVBLh9PjlLl3
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1778424987
+Z5 8alu_1_design.v
+Z6 Falu_1_design.v
+L0 702
+Z7 OE;L;10.6c;65
+r1
+!s85 0
+31
+!s108 1778425224.000000
+Z8 !s107 alu_1_design.v|
+!s90 +acc|+cover|-l|alu.log|alu_1_design.v|
+!i113 0
+Z9 !s102 +cover
+Z10 o+acc +cover -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+valu_ref_mod
+Z11 !s110 1778478105
+!i10b 1
+!s100 n>PHP8ghCfdV9E`cMB`o?3
+IYXK<R3TEJMZH=DHd]ki7?2
+R4
+R0
+Z12 w1778477986
+Z13 8alu_2_design.v
+Z14 Falu_2_design.v
+L0 1083
+R7
+r1
+!s85 0
+31
+Z15 !s108 1778478105.000000
+Z16 !s107 alu_2_design.v|
+Z17 !s90 +acc|+cover|-l|alu_2.log|alu_2_design.v|
+!i113 0
+R9
+R10
+R2
+valu_testbench
+R11
+!i10b 1
+!s100 F1FCld>mV@a5kg^dMQ3110
+Ib2O<b]F=o60nG5cN6f:Mo0
+R4
+R0
+R12
+R13
+R14
+L0 11
+R7
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R9
+R10
+R2
+valuu
+R11
+!i10b 1
+!s100 hlII5EmJoI51Yf98c^GY<2
+IWZV9kB5cPkb9gW`CPQNKA3
+R4
+R0
+R12
+R13
+R14
+L0 665
+R7
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R9
+R10
+R2
+vdriver
+Z18 !s110 1778232133
+!i10b 1
+!s100 3:LL<0R@z?cCH`YT6WC;Y1
+IOIAVOI]<9o3<g3l1K@W@B3
+R4
+R0
+Z19 w1778232129
+R5
+R6
+L0 37
+R7
+r1
+!s85 0
+31
+Z20 !s108 1778232133.000000
+R8
+Z21 !s90 alu_1_design.v|
+!i113 0
+Z22 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+vscoreboard
+R18
+!i10b 1
+!s100 zj<W]aAUQ7W:F3og27VVQ3
+I:KkYgaPPhK^Sng2E8MK533
+R4
+R0
+R19
+R5
+R6
+L0 236
+R7
+r1
+!s85 0
+31
+R20
+R8
+R21
+!i113 0
+R22
+R2
+vtb
+R18
+!i10b 1
+!s100 j?;0;gTdK8mZnL=?Ia[Im3
+IMOFZfzZBA:Cg>EB5dZz200
+R4
+R0
+R19
+R5
+R6
+L0 1
+R7
+r1
+!s85 0
+31
+R20
+R8
+R21
+!i113 0
+R22
+R2

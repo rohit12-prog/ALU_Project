@@ -1,0 +1,228 @@
+# vsim work.alu_testbench -l alu.log -coverage -c -do "coverage save -onexit -codeAll alu_coverage.ucdb; run -all; exit" 
+# Start time: 20:32:05 on May 10,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# //  Questa Sim
+# //  Version 10.6c linux Jul 25 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.alu_testbench(fast)
+# Loading work.alu_design(fast)
+# Loading work.alu_ref_mod(fast)
+# coverage save -onexit -codeAll alu_coverage.ucdb
+#  run -all
+# 
+# === DIRECT CASES ===
+# 
+# --- RST: Async Assert/Deassert (ID2) ---
+# [PASS] RST async assert all outputs zero immediately
+# [PASS] RST deassert then ADD               OPA=0f OPB=01 CMD=0000 MODE=1 IN_VAL=11
+# 
+# --- RST during ALU operation (ID3) ---
+# [PASS] pre-rst ADD                         OPA=aa OPB=bb CMD=0000 MODE=1 IN_VAL=11
+# [PASS] RST during op  operation aborted, outputs reset
+# [PASS] post-rst op                         OPA=0f OPB=01 CMD=0000 MODE=1 IN_VAL=11
+# 
+# --- CE enable / disable (ID4, ID5) ---
+# [PASS] CE=1 ADD executes                   OPA=0f OPB=01 CMD=0000 MODE=1 IN_VAL=11
+# [PASS] CE=0 output holds                   OPA=aa OPB=bb CMD=0000 MODE=1 IN_VAL=11
+# 
+# --- Arithmetic Operations MODE=1 (ID6-21) ---
+# [PASS] ADD normal                          OPA=0f OPB=01 CMD=0000 MODE=1 IN_VAL=11
+# [PASS] ADD carry out                       OPA=ff OPB=01 CMD=0000 MODE=1 IN_VAL=11
+# [PASS] ADD zero                            OPA=00 OPB=00 CMD=0000 MODE=1 IN_VAL=11
+# [PASS] SUB normal                          OPA=20 OPB=10 CMD=0001 MODE=1 IN_VAL=11
+# [PASS] SUB underflow->oflow                OPA=10 OPB=20 CMD=0001 MODE=1 IN_VAL=11
+# [PASS] SUB zero                            OPA=00 OPB=00 CMD=0001 MODE=1 IN_VAL=11
+# [PASS] ADD_CIN Cin=0                       OPA=ff OPB=00 CMD=0010 MODE=1 IN_VAL=11
+# [PASS] ADD_CIN Cin=1 carry                 OPA=ff OPB=00 CMD=0010 MODE=1 IN_VAL=11
+# [PASS] ADD_CIN c=1 normal                  OPA=10 OPB=20 CMD=0010 MODE=1 IN_VAL=11
+# [PASS] ADD_CIN zero                        OPA=00 OPB=00 CMD=0010 MODE=1 IN_VAL=11
+# [PASS] SUB_BOR Cin=0                       OPA=20 OPB=10 CMD=0011 MODE=1 IN_VAL=11
+# [PASS] SUB_BOR Cin=1                       OPA=0f OPB=01 CMD=0011 MODE=1 IN_VAL=11
+# [PASS] SUB_BOR underflow                   OPA=01 OPB=0f CMD=0011 MODE=1 IN_VAL=11
+# [PASS] INC_OPA normal                      OPA=0a OPB=00 CMD=0100 MODE=1 IN_VAL=11
+# [PASS] INC_OPA iv=01                       OPA=0a OPB=00 CMD=0100 MODE=1 IN_VAL=01
+# [PASS] DEC_OPA normal                      OPA=0a OPB=00 CMD=0101 MODE=1 IN_VAL=11
+# [PASS] DEC_OPA iv=01                       OPA=0a OPB=00 CMD=0101 MODE=1 IN_VAL=01
+# [PASS] INC_OPB normal                      OPA=00 OPB=0a CMD=0110 MODE=1 IN_VAL=11
+# [PASS] INC_OPB iv=10                       OPA=00 OPB=0a CMD=0110 MODE=1 IN_VAL=10
+# [PASS] DEC_OPB normal                      OPA=00 OPB=0a CMD=0111 MODE=1 IN_VAL=11
+# [PASS] DEC_OPB iv=10                       OPA=00 OPB=0a CMD=0111 MODE=1 IN_VAL=10
+# [PASS] CMP OPA>OPB -> G                    OPA=ff OPB=01 CMD=1000 MODE=1 IN_VAL=11
+# [PASS] CMP OPA<OPB -> L                    OPA=01 OPB=ff CMD=1000 MODE=1 IN_VAL=11
+# [PASS] CMP OPA==OPB -> E                   OPA=aa OPB=aa CMD=1000 MODE=1 IN_VAL=11
+# [PASS] CMP zero equal -> E                 OPA=00 OPB=00 CMD=1000 MODE=1 IN_VAL=11
+# [PASS] MUL (3)*(4)=12                      OPA=02 OPB=03 CMD=1001 MODE=1 IN_VAL=11
+# [PASS] MUL 1*1=1                           OPA=00 OPB=00 CMD=1001 MODE=1 IN_VAL=11
+# [PASS] MUL max                             OPA=ff OPB=ff CMD=1001 MODE=1 IN_VAL=11
+# [PASS] MUL_SHL normal                      OPA=02 OPB=03 CMD=1010 MODE=1 IN_VAL=11
+# [PASS] MUL_SHL max                         OPA=ff OPB=ff CMD=1010 MODE=1 IN_VAL=11
+# [PASS] FLUSH after MUL                     OPA=00 OPB=00 CMD=0000 MODE=1 IN_VAL=11
+# [FAIL] SADD +ve overflow                   OPA=3f OPB=3f CMD=1011 MODE=1 IN_VAL=11
+#   DUT: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+#   REF: res=007e oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] SADD -ve overflow                   OPA=c0 OPB=c0 CMD=1011 MODE=1 IN_VAL=11
+#   DUT: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+#   REF: res=ff80 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [PASS] SADD +1+(-1)=0                      OPA=01 OPB=ff CMD=1011 MODE=1 IN_VAL=11
+# [PASS] SADD zero                           OPA=00 OPB=00 CMD=1011 MODE=1 IN_VAL=11
+# [FAIL] SSUB max-(-1)                       OPA=7f OPB=ff CMD=1100 MODE=1 IN_VAL=11
+#   DUT: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+#   REF: res=0080 oflow=0 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] SSUB 0-1                            OPA=00 OPB=01 CMD=1100 MODE=1 IN_VAL=11
+#   DUT: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+#   REF: res=ffff oflow=1 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] SSUB min overflow                   OPA=80 OPB=01 CMD=1100 MODE=1 IN_VAL=11
+#   DUT: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+#   REF: res=ff7f oflow=1 cout=0 G=0 L=0 E=0 err=0
+# 
+# --- Logical Operations MODE=0 (ID22-35) ---
+# [PASS] AND normal                          OPA=ff OPB=0f CMD=0000 MODE=0 IN_VAL=11
+# [PASS] AND zero                            OPA=00 OPB=ff CMD=0000 MODE=0 IN_VAL=11
+# [PASS] NAND all ones                       OPA=ff OPB=ff CMD=0001 MODE=0 IN_VAL=11
+# [PASS] NAND zero                           OPA=00 OPB=00 CMD=0001 MODE=0 IN_VAL=11
+# [PASS] OR normal                           OPA=f0 OPB=0f CMD=0010 MODE=0 IN_VAL=11
+# [PASS] OR zero                             OPA=00 OPB=00 CMD=0010 MODE=0 IN_VAL=11
+# [PASS] NOR zero                            OPA=00 OPB=00 CMD=0011 MODE=0 IN_VAL=11
+# [PASS] NOR all ones                        OPA=ff OPB=ff CMD=0011 MODE=0 IN_VAL=11
+# [PASS] XOR same->0                         OPA=ff OPB=ff CMD=0100 MODE=0 IN_VAL=11
+# [PASS] XOR->FF                             OPA=aa OPB=55 CMD=0100 MODE=0 IN_VAL=11
+# [PASS] XNOR same->FF                       OPA=ff OPB=ff CMD=0101 MODE=0 IN_VAL=11
+# [PASS] XNOR->00                            OPA=aa OPB=55 CMD=0101 MODE=0 IN_VAL=11
+# [PASS] NOT_OPA iv=01                       OPA=aa OPB=00 CMD=0110 MODE=0 IN_VAL=01
+# [PASS] NOT_OPA iv=11                       OPA=00 OPB=00 CMD=0110 MODE=0 IN_VAL=11
+# [PASS] NOT_OPB iv=10                       OPA=00 OPB=aa CMD=0111 MODE=0 IN_VAL=10
+# [PASS] NOT_OPB iv=11                       OPA=00 OPB=ff CMD=0111 MODE=0 IN_VAL=11
+# [PASS] SHR_OPA normal                      OPA=aa OPB=00 CMD=1000 MODE=0 IN_VAL=11
+# [PASS] SHR_OPA LSB drop                    OPA=01 OPB=00 CMD=1000 MODE=0 IN_VAL=01
+# [PASS] SHL_OPA normal                      OPA=aa OPB=00 CMD=1001 MODE=0 IN_VAL=11
+# [PASS] SHL_OPA MSB drop                    OPA=80 OPB=00 CMD=1001 MODE=0 IN_VAL=01
+# [PASS] SHR_OPB normal                      OPA=00 OPB=aa CMD=1010 MODE=0 IN_VAL=11
+# [PASS] SHR_OPB LSB drop                    OPA=00 OPB=01 CMD=1010 MODE=0 IN_VAL=10
+# [PASS] SHL_OPB normal                      OPA=00 OPB=aa CMD=1011 MODE=0 IN_VAL=11
+# [PASS] SHL_OPB MSB drop                    OPA=00 OPB=80 CMD=1011 MODE=0 IN_VAL=10
+# [PASS] ROL by 1                            OPA=aa OPB=01 CMD=1100 MODE=0 IN_VAL=11
+# [PASS] ROL by 4                            OPA=aa OPB=04 CMD=1100 MODE=0 IN_VAL=11
+# [PASS] ROL by 0->same                      OPA=aa OPB=00 CMD=1100 MODE=0 IN_VAL=11
+# [PASS] ROL 0x01 by 1->0x02                 OPA=01 OPB=01 CMD=1100 MODE=0 IN_VAL=11
+# [PASS] ROR by 1                            OPA=aa OPB=01 CMD=1101 MODE=0 IN_VAL=11
+# [PASS] ROR by 4                            OPA=aa OPB=04 CMD=1101 MODE=0 IN_VAL=11
+# [PASS] ROR by 0->same                      OPA=aa OPB=00 CMD=1101 MODE=0 IN_VAL=11
+# [PASS] ROR 0x80 by 1->0x40                 OPA=80 OPB=01 CMD=1101 MODE=0 IN_VAL=11
+# 
+# --- IN_VAL tests (ID36-40) ---
+# [PASS] IV=1 MODE1 cmd4 INC_A ok            OPA=0a OPB=00 CMD=0100 MODE=1 IN_VAL=01
+# [PASS] IV=1 MODE1 cmd5 DEC_A ok            OPA=0a OPB=00 CMD=0101 MODE=1 IN_VAL=01
+# [PASS] IV=2 MODE1 cmd6 INC_B ok            OPA=00 OPB=0a CMD=0110 MODE=1 IN_VAL=10
+# [PASS] IV=2 MODE1 cmd7 DEC_B ok            OPA=00 OPB=0a CMD=0111 MODE=1 IN_VAL=10
+# [PASS] IV=1 MODE0 cmd6 NOT_A ok            OPA=aa OPB=00 CMD=0110 MODE=0 IN_VAL=01
+# [PASS] IV=1 MODE0 cmd8 SHR_A ok            OPA=aa OPB=00 CMD=1000 MODE=0 IN_VAL=01
+# [PASS] IV=1 MODE0 cmd9 SHL_A ok            OPA=aa OPB=00 CMD=1001 MODE=0 IN_VAL=01
+# [PASS] IV=2 MODE0 cmd7 NOT_B ok            OPA=00 OPB=aa CMD=0111 MODE=0 IN_VAL=10
+# [PASS] IV=2 MODE0 cmd10 SHR_B ok           OPA=00 OPB=aa CMD=1010 MODE=0 IN_VAL=10
+# [PASS] IV=2 MODE0 cmd11 SHL_B ok           OPA=00 OPB=aa CMD=1011 MODE=0 IN_VAL=10
+# [PASS] IV=3 MODE1 ADD ok                   OPA=0f OPB=01 CMD=0000 MODE=1 IN_VAL=11
+# [PASS] IV=3 MODE0 AND ok                   OPA=ff OPB=0f CMD=0000 MODE=0 IN_VAL=11
+# 
+# === CORNER CASES ===
+# [PASS] CC ADD 255+1=0 Cout=1               OPA=ff OPB=01 CMD=0000 MODE=1 IN_VAL=11
+# [PASS] CC ADD 0+0=0 Cout=0                 OPA=00 OPB=00 CMD=0000 MODE=1 IN_VAL=11
+# [PASS] CC ADD 255+255 Cout=1               OPA=ff OPB=ff CMD=0000 MODE=1 IN_VAL=11
+# [PASS] CC SUB 0-255 oflow=1                OPA=00 OPB=ff CMD=0001 MODE=1 IN_VAL=11
+# [PASS] CC SUB 0-0=0 oflow=0                OPA=00 OPB=00 CMD=0001 MODE=1 IN_VAL=11
+# [PASS] CC SUB 255-255=0 oflow=0            OPA=ff OPB=ff CMD=0001 MODE=1 IN_VAL=11
+# [PASS] CC ADD_CIN 255+0+1=0 Cout=1         OPA=ff OPB=00 CMD=0010 MODE=1 IN_VAL=11
+# [PASS] CC ADD_CIN 255+255+1=255            OPA=ff OPB=ff CMD=0010 MODE=1 IN_VAL=11
+# [PASS] CC SUB_CIN 0-255-1 oflow=1          OPA=00 OPB=ff CMD=0011 MODE=1 IN_VAL=11
+# [PASS] CC SUB_CIN 255-255-1 oflow=1        OPA=ff OPB=ff CMD=0011 MODE=1 IN_VAL=11
+# [PASS] CC INC_OPA 255 wrap->0              OPA=ff OPB=00 CMD=0100 MODE=1 IN_VAL=11
+# [PASS] CC INC_OPA iv=01 wrap->0            OPA=ff OPB=00 CMD=0100 MODE=1 IN_VAL=01
+# [PASS] CC DEC_OPA 0 wrap->255              OPA=00 OPB=00 CMD=0101 MODE=1 IN_VAL=11
+# [PASS] CC DEC_OPA iv=01 wrap->255          OPA=00 OPB=00 CMD=0101 MODE=1 IN_VAL=01
+# [PASS] CC INC_OPB 255 wrap->0              OPA=00 OPB=ff CMD=0110 MODE=1 IN_VAL=11
+# [PASS] CC INC_OPB iv=10 wrap->0            OPA=00 OPB=ff CMD=0110 MODE=1 IN_VAL=10
+# [PASS] CC DEC_OPB 0 wrap->255              OPA=00 OPB=00 CMD=0111 MODE=1 IN_VAL=11
+# [PASS] CC DEC_OPB iv=10 wrap->255          OPA=00 OPB=00 CMD=0111 MODE=1 IN_VAL=10
+# [PASS] CC MUL pipeline input1              OPA=01 OPB=02 CMD=1001 MODE=1 IN_VAL=11
+# [PASS] CC MUL pipeline input2              OPA=03 OPB=04 CMD=1001 MODE=1 IN_VAL=11
+# [PASS] CC MUL pipeline input3              OPA=05 OPB=06 CMD=1001 MODE=1 IN_VAL=11
+# [PASS] CC MUL_SHL pipeline input1          OPA=01 OPB=02 CMD=1010 MODE=1 IN_VAL=11
+# [PASS] CC MUL_SHL pipeline input2          OPA=03 OPB=04 CMD=1010 MODE=1 IN_VAL=11
+# [PASS] CC MUL_SHL 1 input                  OPA=01 OPB=01 CMD=1010 MODE=1 IN_VAL=11
+# [PASS] CC FLUSH after MUL                  OPA=00 OPB=00 CMD=0000 MODE=1 IN_VAL=11
+# [FAIL] CC SADD 127+1 oflow=1               OPA=7f OPB=01 CMD=1011 MODE=1 IN_VAL=11
+#   DUT: res=0000 oflow=1 cout=0 G=0 L=0 E=0 err=0
+#   REF: res=0080 oflow=1 cout=0 G=0 L=0 E=0 err=0
+# [FAIL] CC SSUB -128-1 oflow=1              OPA=80 OPB=01 CMD=1100 MODE=1 IN_VAL=11
+#   DUT: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=0
+#   REF: res=ff7f oflow=1 cout=0 G=0 L=0 E=0 err=0
+# [PASS] CC mode->0 AND                      OPA=ff OPB=0f CMD=0000 MODE=0 IN_VAL=11
+# [PASS] CC mode->1 ADD same inputs          OPA=ff OPB=0f CMD=0000 MODE=1 IN_VAL=11
+# [PASS] CC MODE1 cmd0 ADD                   OPA=0f OPB=01 CMD=0000 MODE=1 IN_VAL=11
+# [PASS] CC MODE1 cmd1 SUB same operands     OPA=0f OPB=01 CMD=0001 MODE=1 IN_VAL=11
+# [PASS] CC MODE0 cmd2 OR                    OPA=f0 OPB=0f CMD=0010 MODE=0 IN_VAL=11
+# [PASS] CC MODE0 cmd4 XOR same operands     OPA=f0 OPB=0f CMD=0100 MODE=0 IN_VAL=11
+# 
+# === ERROR CASES ===
+# [PASS] EC IN_VAL=0 MODE1 ADD->err          OPA=aa OPB=bb CMD=0000 MODE=1 IN_VAL=00
+# [PASS] EC IN_VAL=0 MODE0 AND->err          OPA=aa OPB=bb CMD=0000 MODE=0 IN_VAL=00
+# [PASS] EC IV=1 MODE1 cmd0 ADD->err         OPA=aa OPB=bb CMD=0000 MODE=1 IN_VAL=01
+# [PASS] EC IV=1 MODE1 cmd1 SUB->err         OPA=aa OPB=bb CMD=0001 MODE=1 IN_VAL=01
+# [PASS] EC IV=1 MODE1 cmd2->err             OPA=aa OPB=bb CMD=0010 MODE=1 IN_VAL=01
+# [PASS] EC IV=1 MODE1 cmd3->err             OPA=aa OPB=bb CMD=0011 MODE=1 IN_VAL=01
+# [PASS] EC IV=1 MODE1 cmd6->err             OPA=aa OPB=bb CMD=0110 MODE=1 IN_VAL=01
+# [PASS] EC IV=1 MODE1 cmd8 CMP->err         OPA=aa OPB=bb CMD=1000 MODE=1 IN_VAL=01
+# [FAIL] EC IV=1 MODE1 cmd9 MUL->err         OPA=aa OPB=bb CMD=1001 MODE=1 IN_VAL=01
+#   DUT: res=xxxx oflow=0 cout=0 G=0 L=0 E=0 err=1
+#   REF: res=0000 oflow=0 cout=0 G=0 L=0 E=0 err=1
+# [PASS] EC IV=2 MODE1 cmd0 ADD->err         OPA=aa OPB=bb CMD=0000 MODE=1 IN_VAL=10
+# [PASS] EC IV=2 MODE1 cmd1 SUB->err         OPA=aa OPB=bb CMD=0001 MODE=1 IN_VAL=10
+# [PASS] EC IV=2 MODE1 cmd4->err             OPA=aa OPB=bb CMD=0100 MODE=1 IN_VAL=10
+# [PASS] EC IV=2 MODE1 cmd5->err             OPA=aa OPB=bb CMD=0101 MODE=1 IN_VAL=10
+# [PASS] EC IV=2 MODE1 cmd8 CMP->err         OPA=aa OPB=bb CMD=1000 MODE=1 IN_VAL=10
+# [PASS] EC IV=1 MODE0 cmd0 AND->err         OPA=aa OPB=bb CMD=0000 MODE=0 IN_VAL=01
+# [PASS] EC IV=1 MODE0 cmd1 NAND->err        OPA=aa OPB=bb CMD=0001 MODE=0 IN_VAL=01
+# [PASS] EC IV=1 MODE0 cmd7 NOT_B->err       OPA=aa OPB=bb CMD=0111 MODE=0 IN_VAL=01
+# [PASS] EC IV=1 MODE0 cmd10 SHR_B->err      OPA=aa OPB=bb CMD=1010 MODE=0 IN_VAL=01
+# [PASS] EC IV=1 MODE0 cmd11 SHL_B->err      OPA=aa OPB=bb CMD=1011 MODE=0 IN_VAL=01
+# [PASS] EC IV=1 MODE0 cmd13 ROR->err        OPA=aa OPB=01 CMD=1101 MODE=0 IN_VAL=01
+# [PASS] EC IV=2 MODE0 cmd0 AND->err         OPA=aa OPB=bb CMD=0000 MODE=0 IN_VAL=10
+# [PASS] EC IV=2 MODE0 cmd1 NAND->err        OPA=aa OPB=bb CMD=0001 MODE=0 IN_VAL=10
+# [PASS] EC IV=2 MODE0 cmd6 NOT_A->err       OPA=aa OPB=bb CMD=0110 MODE=0 IN_VAL=10
+# [PASS] EC IV=2 MODE0 cmd8 SHR_A->err       OPA=aa OPB=bb CMD=1000 MODE=0 IN_VAL=10
+# [PASS] EC IV=2 MODE0 cmd9 SHL_A->err       OPA=aa OPB=bb CMD=1001 MODE=0 IN_VAL=10
+# [PASS] EC IV=2 MODE0 cmd12 ROL->err        OPA=aa OPB=01 CMD=1100 MODE=0 IN_VAL=10
+# [PASS] EC ROL OPB=FF out-of-range->err     OPA=aa OPB=ff CMD=1100 MODE=0 IN_VAL=11
+# [PASS] EC ROL OPB=8 out-of-range->err      OPA=aa OPB=08 CMD=1100 MODE=0 IN_VAL=11
+# [PASS] EC ROR OPB=FF out-of-range->err     OPA=aa OPB=ff CMD=1101 MODE=0 IN_VAL=11
+# [PASS] EC ROR OPB=8 out-of-range->err      OPA=aa OPB=08 CMD=1101 MODE=0 IN_VAL=11
+# [PASS] EC MODE0 cmd14 out-of-range         OPA=aa OPB=bb CMD=1110 MODE=0 IN_VAL=11
+# [PASS] EC MODE0 cmd15 out-of-range         OPA=aa OPB=bb CMD=1111 MODE=0 IN_VAL=11
+# [PASS] EC MODE1 cmd13 out-of-range         OPA=aa OPB=bb CMD=1101 MODE=1 IN_VAL=11
+# [PASS] EC MODE1 cmd14 out-of-range         OPA=aa OPB=bb CMD=1110 MODE=1 IN_VAL=11
+# [PASS] EC MODE1 cmd15 out-of-range         OPA=aa OPB=bb CMD=1111 MODE=1 IN_VAL=11
+# [PASS] EC MODE0->1 cmd13 baseline          OPA=aa OPB=01 CMD=1101 MODE=0 IN_VAL=11
+# [PASS] EC MODE1 cmd13 -> err/default       OPA=aa OPB=01 CMD=1101 MODE=1 IN_VAL=11
+# 
+# =============================
+#   TOTAL : 159
+#   PASS  : 151
+#   FAIL  : 8
+# =============================
+# *** SOME TESTS FAILED ***
+# 
+# ** Note: $finish    : alu_1_design.v(117)
+#    Time: 3456 ns  Iteration: 0  Instance: /alu_testbench
+# Saving coverage database on exit...
+# End time: 20:32:06 on May 10,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
